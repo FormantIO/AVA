@@ -16,14 +16,14 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
         autoFit: true,
         padding: 'auto',
       });
-      chartRef.current.options(spec);
+      chartRef.current.options({ ...spec, theme: 'classicDark' });
     } else {
       chartRef.current.clear();
       chartRef.current.options({
         autoFit: true,
         padding: 'auto',
       });
-      chartRef.current.options(spec);
+      chartRef.current.options({ ...spec, theme: 'classicDark' });
     }
 
     if (!isRendering.current) {
