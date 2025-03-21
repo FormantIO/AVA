@@ -2,8 +2,8 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { generateTextSpec } from '@antv/ava';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { generateTextSpec } from '@formant/ava';
+import { NarrativeTextVis } from '@formant/ava-react';
 
 ReactDOM.render(
   <NarrativeTextVis

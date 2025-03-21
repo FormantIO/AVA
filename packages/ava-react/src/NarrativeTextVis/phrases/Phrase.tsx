@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Tooltip, TooltipProps } from 'antd';
-import { isTextPhrase, isEntityPhrase, isEscapePhrase, isFormulaPhrase, isImagePhrase } from '@antv/ava';
+import { isTextPhrase, isEntityPhrase, isEscapePhrase, isFormulaPhrase, isImagePhrase } from '@formant/ava';
 import { isFunction, kebabCase, isEmpty, isNil } from 'lodash';
 import katex from 'katex';
 
@@ -13,7 +13,7 @@ import { PhraseDescriptor, presetPluginManager } from '../chore/plugin';
 import { getThemeColor } from '../theme';
 
 import type { ReactNode } from 'react';
-import type { PhraseSpec, EntityPhraseSpec, CustomPhraseSpec } from '@antv/ava';
+import type { PhraseSpec, EntityPhraseSpec, CustomPhraseSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, PhraseEvents } from '../types';
 
 type PhraseProps = ThemeStylesProps &

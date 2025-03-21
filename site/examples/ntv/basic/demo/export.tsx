@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Space, Button, message } from 'antd';
 import { CopyOutlined } from '@ant-design/icons';
 import copy from 'copy-to-clipboard';
-import { NarrativeTextVis, TextExporter, createRatioValue, createDeltaValue, copyToClipboard } from '@antv/ava-react';
+import { NarrativeTextVis, TextExporter, createRatioValue, createDeltaValue, copyToClipboard } from '@formant/ava-react';
 
 const exporter = new TextExporter();
 

@@ -7,13 +7,13 @@ import {
   isTextParagraph,
   isBulletParagraph,
   isDividerParagraph,
-} from '@antv/ava';
+} from '@formant/ava';
 
 import { Heading } from './Heading';
 import { TextLine } from './TextLine';
 import { Bullets } from './Bullets';
 
-import type { ParagraphSpec } from '@antv/ava';
+import type { ParagraphSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, ParagraphEvents } from '../types';
 
 export type ParagraphProps = ThemeStylesProps &

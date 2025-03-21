@@ -8,7 +8,7 @@ import {
   isCustomPhrase,
   isEntityPhrase,
   getHeadingWeight,
-} from '@antv/ava';
+} from '@formant/ava';
 import { pad } from 'lodash';
 
 import { PluginManager } from '../plugin';
@@ -16,7 +16,7 @@ import { NTV_PREFIX_CLS } from '../../constants';
 
 import { ImageExtra, transformHtml } from './helpers/transformHtml';
 
-import type { NarrativeTextSpec, SectionSpec, ParagraphSpec, BulletItemSpec, PhraseSpec } from '@antv/ava';
+import type { NarrativeTextSpec, SectionSpec, ParagraphSpec, BulletItemSpec, PhraseSpec } from '@formant/ava';
 
 const NTV_CONTAINER_CLS = `${NTV_PREFIX_CLS}-container`;
 

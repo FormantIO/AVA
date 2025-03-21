@@ -1,9 +1,9 @@
-import { Subspace, generateInsightVisualizationSpec } from '@antv/ava';
+import { Subspace, generateInsightVisualizationSpec } from '@formant/ava';
 
 import { DISPLAY_CHARTS_PLUGIN_KEY, SUBSPACE_DESCRIPTION_PLUGIN_KEY } from '../constants';
 
 import type { G2Spec } from '@antv/g2';
-import type { NarrativeTextSpec, ParagraphSpec, InsightInfo, InsightVisualizationOptions } from '@antv/ava';
+import type { NarrativeTextSpec, ParagraphSpec, InsightInfo, InsightVisualizationOptions } from '@formant/ava';
 
 /**
  * generate description of data subspace (the conditions of data subset)

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import { get } from 'lodash';
-import { ValueAssessment, EntityMetaData } from '@antv/ava';
+import { ValueAssessment, EntityMetaData } from '@formant/ava';
 
 import { ArrowDown, ArrowUp } from '../../../assets/icons';
 import { createEntityPhraseFactory } from '../createEntityPhraseFactory';

@@ -2,9 +2,9 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 import { Tooltip } from 'antd';
-import { NarrativeTextVis, NtvPluginManager, createMetricName, createCustomPhraseFactory } from '@antv/ava-react';
+import { NarrativeTextVis, NtvPluginManager, createMetricName, createCustomPhraseFactory } from '@formant/ava-react';
 
-import type { NarrativeTextSpec } from '@antv/ava-react';
+import type { NarrativeTextSpec } from '@formant/ava-react';
 
 const textSpec: NarrativeTextSpec = {
   sections: [

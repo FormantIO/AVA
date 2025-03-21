@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { getThemeColor, getFontSize, getLineHeight } from '../theme';
 
-import type { TextParagraphSpec } from '@antv/ava';
+import type { TextParagraphSpec } from '@formant/ava';
 import type { ThemeStylesProps } from '../types';
 
 export const P = styled.p<ThemeStylesProps & Pick<TextParagraphSpec, 'indents'>>`

@@ -4,7 +4,7 @@ import { presetPluginManager } from '../chore/plugin';
 
 import { Phrase } from './Phrase';
 
-import type { PhraseSpec } from '@antv/ava';
+import type { PhraseSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, PhraseEvents } from '../types';
 
 type PhrasesProps = ThemeStylesProps &

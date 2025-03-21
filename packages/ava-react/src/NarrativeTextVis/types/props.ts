@@ -7,7 +7,7 @@ import type {
   BulletItemSpec,
   SectionSpec,
   NarrativeTextSpec,
-} from '@antv/ava';
+} from '@formant/ava';
 import type { PluginManager } from '../chore/plugin';
 
 export type ThemeType = 'light' | 'dark';

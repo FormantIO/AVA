@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from 'react'
 import { Empty, message, Row, Spin } from 'antd';
 import cx from 'classnames';
 import { isFunction } from 'lodash';
-import { getInsights } from '@antv/ava';
+import { getInsights } from '@formant/ava';
 
 import { copyToClipboard, NarrativeTextVis, NtvPluginManager, TextExporter } from '../NarrativeTextVis';
 
@@ -15,7 +15,7 @@ import { EXPORT_DATA_LABEL, INSIGHT_CARD_PREFIX_CLS } from './constants';
 import { Container } from './styled/container';
 import { defaultMoreButton } from './Toolbar/defaultTools';
 
-import type { InsightInfo } from '@antv/ava';
+import type { InsightInfo } from '@formant/ava';
 import type { Tool } from './Toolbar/types';
 import type { InsightCardProps, InsightCardInfo, InsightDataStatus } from './types';
 

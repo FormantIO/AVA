@@ -1,4 +1,4 @@
-import { InsightType } from '@antv/ava';
+import { InsightType } from '@formant/ava';
 
 import { getPrefixCls } from '../utils';
 /** class name prefix for InsightCard, avar-insight-card */

@@ -6,7 +6,7 @@ import { functionalize } from '../../utils';
 
 import { createPhraseFactory } from './createPhraseFactory';
 
-import type { EntityType, EntityMetaData } from '@antv/ava';
+import type { EntityType, EntityMetaData } from '@formant/ava';
 import type { CSSProperties } from 'react';
 import type { PhraseDescriptor, SpecificEntityPhraseDescriptor, CustomEntityMode } from './plugin-protocol.type';
 import type { ThemeStylesProps } from '../../types';

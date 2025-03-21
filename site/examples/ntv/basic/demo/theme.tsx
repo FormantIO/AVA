@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import ReactDOM from 'react-dom';
 import { Form, Radio, Descriptions, Skeleton } from 'antd';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 import insertCss from 'insert-css';
 
-import type { NarrativeTextVisProps } from '@antv/ava-react';
+import type { NarrativeTextVisProps } from '@formant/ava-react';
 
 insertCss(`
   .ntv-dark-desc .ant-descriptions-item-label{

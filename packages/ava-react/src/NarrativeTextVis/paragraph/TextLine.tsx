@@ -6,7 +6,7 @@ import { Phrases } from '../phrases';
 import { classnames as cx } from '../../utils';
 import { presetPluginManager } from '../chore/plugin';
 
-import type { TextParagraphSpec } from '@antv/ava';
+import type { TextParagraphSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, PhraseEvents } from '../types';
 
 type TextLineProps = ThemeStylesProps &

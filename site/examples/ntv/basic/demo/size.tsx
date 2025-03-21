@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import ReactDOM from 'react-dom';
 import { Form, Radio } from 'antd';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 
-import type { NarrativeTextSpec, BulletItemSpec, NarrativeTextVisProps } from '@antv/ava-react';
+import type { NarrativeTextSpec, BulletItemSpec, NarrativeTextVisProps } from '@formant/ava-react';
 
 const spec: NarrativeTextSpec = {
   sections: [

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { InsightCard } from '@antv/ava-react';
-import { getInsights } from '@antv/ava';
+import { InsightCard } from '@formant/ava-react';
+import { getInsights } from '@formant/ava';
 
 const data = [
   { year: '2000', value: 1 },

@@ -2,7 +2,7 @@ import { get } from 'lodash';
 
 import { seedToken } from './seed';
 
-import type { EntityType } from '@antv/ava';
+import type { EntityType } from '@formant/ava';
 import type { ColorToken } from './seed';
 import type { ThemeType, ThemeStylesProps } from '../types';
 

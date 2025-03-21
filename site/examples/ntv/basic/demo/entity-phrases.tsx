@@ -2,7 +2,7 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 import { Descriptions } from 'antd';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 
 const { Phrase } = NarrativeTextVis;
 

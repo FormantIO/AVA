@@ -9,13 +9,13 @@ import {
   NtvPluginManager,
   createCustomPhraseFactory,
   createCustomBlockFactory,
-} from '@antv/ava-react';
+} from '@formant/ava-react';
 import { isEqual } from 'lodash';
 import moment from 'moment';
 import Mock from 'mockjs';
 
 import type { Plot } from '@antv/g2plot';
-import type { NarrativeTextSpec } from '@antv/ava-react';
+import type { NarrativeTextSpec } from '@formant/ava-react';
 
 const DATE_FORMAT = 'YYYY.MM.DD';
 const mockData = Array.from({ length: 100 }, (v, i) => ({

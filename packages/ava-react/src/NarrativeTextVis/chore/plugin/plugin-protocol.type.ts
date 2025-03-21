@@ -1,6 +1,6 @@
 import { isObject } from 'lodash';
 
-import type { EntityMetaData, EntityType } from '@antv/ava';
+import type { EntityMetaData, EntityType } from '@formant/ava';
 import type { CSSProperties, ReactNode } from 'react';
 import type { TooltipProps } from 'antd';
 import type { EntityEncoding, ThemeStylesProps } from '../../types';

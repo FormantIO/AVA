@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import ReactDOM from 'react-dom';
 import { Skeleton } from 'antd';
-import { getInsights } from '@antv/ava';
-import { InsightCard } from '@antv/ava-react';
+import { getInsights } from '@formant/ava';
+import { InsightCard } from '@formant/ava-react';
 
-import type { InsightsResult } from '@antv/ava';
+import type { InsightsResult } from '@formant/ava';
 
 const App = () => {
   const [loading, setLoading] = useState(true);

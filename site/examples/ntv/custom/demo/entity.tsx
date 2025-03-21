@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ReactDOM from 'react-dom';
-import { NarrativeTextVis, NtvPluginManager, createRatioValue, createDeltaValue } from '@antv/ava-react';
+import { NarrativeTextVis, NtvPluginManager, createRatioValue, createDeltaValue } from '@formant/ava-react';
 
 const POS_COLOR = '#269075';
 const NEG_COLOR = '#f4664a';

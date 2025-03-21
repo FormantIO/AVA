@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 
-import type { NarrativeTextSpec } from '@antv/ava';
+import type { NarrativeTextSpec } from '@formant/ava';
 
 // 在使用代码中，需要加入类似下面的方式的样式引用从而支持渲染正确的公式样式
 // import 'katex/dist/katex.min.css';

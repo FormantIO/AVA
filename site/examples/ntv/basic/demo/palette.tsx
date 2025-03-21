@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ReactDOM from 'react-dom';
 import { Form, Skeleton, Popover } from 'antd';
-import { NarrativeTextVis, seedToken } from '@antv/ava-react';
+import { NarrativeTextVis, seedToken } from '@formant/ava-react';
 import { TwitterPicker } from 'react-color';
 
 const ColorSelector: React.FC<{ value?: string; onChange?: (color: string) => void }> = ({ value, onChange }) => {

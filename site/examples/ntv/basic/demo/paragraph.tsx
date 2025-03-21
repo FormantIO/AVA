@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 
-import type { NarrativeTextSpec } from '@antv/ava-react';
+import type { NarrativeTextSpec } from '@formant/ava-react';
 
 const spec: NarrativeTextSpec = {
   sections: [

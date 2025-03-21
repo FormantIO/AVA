@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 import { Paragraph, type ParagraphProps } from '../paragraph';
 import { Container } from '../styled';
 
-import type { NestedParagraphSpec } from '@antv/ava';
+import type { NestedParagraphSpec } from '@formant/ava';
 
 type NestedParagraphProps = Omit<ParagraphProps, 'spec'> & {
   spec: NestedParagraphSpec;

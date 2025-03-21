@@ -76,6 +76,6 @@ export type {
   Structure,
   StructureTemp,
   Variable,
-} from '@antv/ava';
+} from '@formant/ava';
 export type { NarrativeTextVisProps } from './types';
 export type { PluginType as NtvPluginType } from './chore/plugin';

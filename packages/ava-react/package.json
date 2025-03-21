@@ -1,6 +1,6 @@
 {
   "name": "@formant/ava-react",
-  "version": "3.3.2-formant-1",
+  "version": "3.3.4-formant",
   "description": "React components of AVA.",
   "author": {
     "name": "formant",
@@ -9,7 +9,7 @@
   "homepage": "https://ava.antv.antgroup.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FormantIO/AVA/tree"
+    "url": "https://github.com/FormantIO/AVA/tree/master/packages/ava-react"
   },
   "keywords": [
     "visualization",
@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "@antv/ava": "^3.4.0",
+    "@formant/ava": "3.4.1-formant",
     "@antv/g2": "^5.0.8",
     "canvg": "^4.0.1",
     "classnames": "^2.3.2",

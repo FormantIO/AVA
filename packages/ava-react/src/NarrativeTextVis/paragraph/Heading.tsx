@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getHeadingWeight } from '@antv/ava';
+import { getHeadingWeight } from '@formant/ava';
 import { isNaN } from 'lodash';
 
 import * as Elements from '../styled';
@@ -9,7 +9,7 @@ import { Phrases } from '../phrases';
 import { classnames as cx } from '../../utils';
 import { presetPluginManager } from '../chore/plugin';
 
-import type { HeadingParagraphSpec } from '@antv/ava';
+import type { HeadingParagraphSpec } from '@formant/ava';
 import type { ExtensionProps, PhraseEvents, ThemeStylesProps } from '../types';
 
 type HeadingProps = ExtensionProps &

@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react';
 
 import ReactDOM from 'react-dom';
 import { Pie } from '@antv/g2plot';
-import { NarrativeTextVis } from '@antv/ava-react';
+import { NarrativeTextVis } from '@formant/ava-react';
 import { get } from 'lodash';
 import insertCss from 'insert-css';
 
-import type { NarrativeTextSpec } from '@antv/ava-react';
+import type { NarrativeTextSpec } from '@formant/ava-react';
 
 insertCss(`
   .hover-g2plot-pie {

@@ -1,7 +1,7 @@
 import type { NtvPluginType } from '../NarrativeTextVis';
 import type { CSSProperties, ReactNode } from 'react';
 import type { Tool } from './Toolbar/types';
-import type { InsightInfo, InsightOptions, NarrativeTextSpec, InsightVisualizationOptions } from '@antv/ava';
+import type { InsightInfo, InsightOptions, NarrativeTextSpec, InsightVisualizationOptions } from '@formant/ava';
 
 export type CardType = 'mini' | 'standard' | 'expand' | 'detail';
 

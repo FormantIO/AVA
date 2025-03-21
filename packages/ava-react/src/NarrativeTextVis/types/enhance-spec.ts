@@ -1,4 +1,4 @@
-import type { EntityMetaData } from '@antv/ava';
+import type { EntityMetaData } from '@formant/ava';
 import type { ThemeStylesProps } from './props';
 
 export type TypeOrMetaReturnType<T> =

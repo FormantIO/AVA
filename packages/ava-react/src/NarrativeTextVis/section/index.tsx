@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { isCustomSection, isStandardSection } from '@antv/ava';
+import { isCustomSection, isStandardSection } from '@formant/ava';
 import { v4 } from 'uuid';
 import { isFunction } from 'lodash';
 
@@ -10,7 +10,7 @@ import { classnames as cx } from '../../utils';
 import { Paragraph } from '../paragraph';
 import { Container } from '../styled';
 
-import type { SectionSpec } from '@antv/ava';
+import type { SectionSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, SectionEvents } from '../types';
 
 type SectionProps = ThemeStylesProps &

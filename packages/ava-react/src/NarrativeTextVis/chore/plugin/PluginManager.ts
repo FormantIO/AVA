@@ -1,10 +1,10 @@
-import { isCustomPhrase, isEntityPhrase } from '@antv/ava';
+import { isCustomPhrase, isEntityPhrase } from '@formant/ava';
 import { isArray } from 'lodash';
 
 import { isBlockDescriptor, isEntityDescriptor, isCustomPhraseDescriptor } from './plugin-protocol.type';
 import { presetPlugins } from './presets';
 
-import type { EntityType, EntityMetaData, PhraseSpec } from '@antv/ava';
+import type { EntityType, EntityMetaData, PhraseSpec } from '@formant/ava';
 import type { PhraseDescriptor, BlockDescriptor, PluginType } from './plugin-protocol.type';
 
 function getPlugins(plugins?: PluginType[]) {

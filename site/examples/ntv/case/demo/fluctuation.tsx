@@ -3,8 +3,8 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 import { Tooltip, Popover, Checkbox } from 'antd';
-import { generateTextSpec } from '@antv/ava';
-import { NarrativeTextVis, NtvPluginManager, createCustomPhraseFactory, seedToken } from '@antv/ava-react';
+import { generateTextSpec } from '@formant/ava';
+import { NarrativeTextVis, NtvPluginManager, createCustomPhraseFactory, seedToken } from '@formant/ava-react';
 import numeral from 'numeral';
 
 const fluctuationData = {

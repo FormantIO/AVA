@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom';
-import { InsightCard, InsightCardProps } from '@antv/ava-react';
+import { InsightCard, InsightCardProps } from '@formant/ava-react';
 
 const timeSeriesData = [
   { year: '1991', value: 0.3 },
