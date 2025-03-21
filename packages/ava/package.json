@@ -1,15 +1,15 @@
 {
-  "name": "@antv/ava",
-  "version": "3.4.1",
+  "name": "@formant/ava",
+  "version": "3.4.1-formant",
   "description": "A framework for automated visual analytics.",
   "author": {
-    "name": "AntV",
-    "url": "https://antv.antgroup.com/"
+    "name": "formant",
+    "url": "https://antcd v.antgroup.com/"
   },
   "homepage": "https://ava.antv.antgroup.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/AVA/tree/master/packages/ava"
+    "url": "https://https://github.com/FormantIO/AVA/tree/master/packages/ava"
   },
   "sideEffects": false,
   "keywords": [
