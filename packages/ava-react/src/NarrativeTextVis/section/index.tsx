@@ -26,7 +26,7 @@ type SectionProps = ThemeStylesProps &
 export function Section({
   spec,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   showCollapse = false,

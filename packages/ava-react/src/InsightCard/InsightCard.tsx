@@ -139,7 +139,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({
   };
 
   return (
-    <Container className={cx(className, prefixCls)} style={styles} ref={ref}>
+    <Container className={cx(className, prefixCls)} style={{ ...styles, backgroundColor: '#2d3855' }} ref={ref}>
       <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} headerTools={headerTools} />
       {/* content */}
       <Spin spinning={dataStatus === 'RUNNING'}>
