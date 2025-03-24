@@ -12,7 +12,7 @@ const LINEAR_FILL_COLOR_ID = 'wsc-line-fill';
 export const SingleLineChart: React.FC<{ data: number[] } & ThemeStylesProps> = ({
   data,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
 }) => {
   const [Svg, fontSize] = useSvgWrapper(size);
   const { width, height, linePath, polygonPath } = useLineCompute(fontSize, data);

@@ -18,7 +18,7 @@ type TextLineProps = ThemeStylesProps &
 export function TextLine({
   spec,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   ...events

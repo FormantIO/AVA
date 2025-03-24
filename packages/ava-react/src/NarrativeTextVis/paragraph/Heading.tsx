@@ -20,7 +20,7 @@ type HeadingProps = ExtensionProps &
 
 export function Heading({
   spec,
-  theme = 'light',
+  theme = 'dark',
   size = 'normal',
   palette,
   pluginManager = presetPluginManager,

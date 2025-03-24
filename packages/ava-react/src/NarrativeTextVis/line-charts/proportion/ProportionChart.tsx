@@ -10,7 +10,7 @@ import type { ThemeStylesProps } from '../../types';
 export const ProportionChart: React.FC<{ data: number } & ThemeStylesProps> = ({
   data,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
 }) => {
   const [Svg, fontSize] = useSvgWrapper(size);
   const r = fontSize / 2;

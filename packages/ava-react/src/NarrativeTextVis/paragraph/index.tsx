@@ -30,7 +30,7 @@ export function Paragraph({
   spec,
   pluginManager,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   ...events
 }: ParagraphProps) {

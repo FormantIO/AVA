@@ -34,7 +34,7 @@ function renderPhraseByDescriptor({
   events: PhraseEvents;
 }) {
   const { value = '', metadata = {}, styles: specStyles = {} } = spec;
-  const { theme = 'light' } = themeStyles;
+  const { theme = 'dark' } = themeStyles;
 
   const {
     overwrite,
@@ -110,7 +110,7 @@ function renderPhraseByDescriptor({
 export const Phrase: React.FC<PhraseProps> = ({
   spec: phrase,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   ...events

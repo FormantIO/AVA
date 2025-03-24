@@ -17,7 +17,7 @@ import type { NarrativeTextVisProps } from './types';
 export function NarrativeTextVis({
   spec,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   showCollapse = false,

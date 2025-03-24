@@ -19,7 +19,7 @@ export function Headline({
   spec,
   pluginManager = presetPluginManager,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   ...events
 }: HeadlineProps) {
   const { onClickParagraph, onMouseEnterParagraph, onMouseLeaveParagraph, ...phraseEvents } = events || {};

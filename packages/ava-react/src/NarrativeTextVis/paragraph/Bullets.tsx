@@ -22,7 +22,7 @@ type BulletsProps = ThemeStylesProps &
 export function Bullets({
   spec,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   showCollapse = false,

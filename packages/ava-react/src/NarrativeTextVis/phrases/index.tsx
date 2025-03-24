@@ -20,7 +20,7 @@ type PhrasesProps = ThemeStylesProps &
 export function Phrases({
   spec,
   size = 'normal',
-  theme = 'light',
+  theme = 'dark',
   palette,
   pluginManager = presetPluginManager,
   ...events
