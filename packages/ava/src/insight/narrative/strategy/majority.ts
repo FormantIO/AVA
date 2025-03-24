@@ -40,7 +40,7 @@ export default class MajorityNarrativeStrategy extends InsightNarrativeStrategy<
     'en-US': [
       {
         template:
-          'Breaking down the ${measure} by ${dimension}, the ${measure} for ${dimValue} is significantly higher than the other dimensions, at ${y}, ${proportion} of the total (${total}).',
+          'The ${measure} for ${dimValue} is significantly higher than the other dimensions, at ${y}, ${proportion} of the total (${total}).',
         variableMetaMap,
       },
     ],

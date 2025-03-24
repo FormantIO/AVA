@@ -60,11 +60,11 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
     'en-US': [
       {
         template:
-          'In ${dateRange}, ${measure} fluctuates within the range of ${max} to ${min}, with ${total} outliers, sorted by size above the baseline as follows.',
+          '${total} outliers detected for ${measure} during ${dateRange}',
         variableMetaMap,
       },
       {
-        template: '${.x}, ${measure} for ${.y}, compared to the baseline value ${.base}, ${.diffDesc} ${.diff}.',
+        template: '${.x}: ${measure} at ${.y} (${.diffDesc} ${.diff} above baseline)',
         displayType: 'bullet',
         bulletOrder: true,
         useVariable: 'outliers',

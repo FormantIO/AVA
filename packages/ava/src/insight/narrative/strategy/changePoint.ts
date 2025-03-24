@@ -32,7 +32,7 @@ export default class ChangePointNarrativeStrategy extends InsightNarrativeStrate
     ],
     'en-US': [
       {
-        template: 'In ${dateRange}, ${measure} has ${total} major changes, which is worthy of attention.',
+        template: '${total} major changes detected for ${measure} during ${dateRange}',
         variableMetaMap,
       },
     ],

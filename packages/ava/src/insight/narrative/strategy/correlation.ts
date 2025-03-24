@@ -30,7 +30,7 @@ export default class CorrelationNarrativeStrategy extends InsightNarrativeStrate
     ],
     'en-US': [
       {
-        template: '${m1} is most correlated with ${m2} with a correlation coefficient of ${pcorr}.',
+        template: " ${m1} and ${m2}, are highly correlated. Their relationship is measured by a number, ${pcorr}, which tells us just how closely they're linked. A higher number means they move in sync more often.",
         variableMetaMap,
       },
     ],

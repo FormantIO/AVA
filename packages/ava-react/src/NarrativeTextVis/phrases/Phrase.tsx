@@ -34,7 +34,7 @@ function renderPhraseByDescriptor({
   events: PhraseEvents;
 }) {
   const { value = '', metadata = {}, styles: specStyles = {} } = spec;
-  const { theme = 'dark' } = themeStyles;
+  const theme = 'dark';
 
   const {
     overwrite,

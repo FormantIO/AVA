@@ -28,7 +28,7 @@ export default class LowVarianceNarrativeStrategy extends InsightNarrativeStrate
     'en-US': [
       {
         template:
-          'The quantity is disassembled according to ${dimension}, and ${measure} are evenly distributed, with an average of ${mean}.',
+          'We broke down the total based on ${dimension}, and the ${measure} are spread out evenly, averaging ${mean} each.',
         variableMetaMap,
       },
     ],
