@@ -3,7 +3,7 @@ import { ChartType, InsightType } from '../types';
 export const INSIGHT_COLOR_PLATTE: Record<string, string> = {
   highlight: '#E09322',
   outlier: '#CB5140',
-  font: '#2C3542',
+  font: '#bac4e2',
   defaultPointColor: '#fff',
 } as const;
 
@@ -12,6 +12,7 @@ export const BOLD_FONT_WEIGHT = 500;
 export const TEXT_STYLE = {
   textAlign: 'center',
   fill: INSIGHT_COLOR_PLATTE.font,
+  fontFamily: 'Moderat',
   opacity: 0.65,
 };
 

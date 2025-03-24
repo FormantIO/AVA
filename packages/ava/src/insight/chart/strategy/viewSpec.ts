@@ -12,7 +12,7 @@ export const viewSpecStrategy = (marks: Mark[], insight?: InsightInfo<PatternInf
 
   return {
     type: 'view',
-    theme: 'classic',
+    theme: 'dark',
     axis: {
       x: { labelAutoHide: true, labelAutoRotate: false, title: false },
       y: { title: false },
