@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "@formant/ava": "3.4.1-formant",
+    "@formant/ava": "3.4.2-formant",
     "@antv/g2": "^5.0.8",
     "canvg": "^4.0.1",
     "classnames": "^2.3.2",
