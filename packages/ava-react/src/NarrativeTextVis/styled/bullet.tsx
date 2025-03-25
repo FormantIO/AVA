@@ -18,6 +18,8 @@ export const Bullet = styled.div<ThemeStylesProps>`
 
 export const Ol = styled(Bullet)`
   list-style-type: decimal;
+  max-height: 100px;
+  overflow: hidden;
 `;
 
 export const Ul = styled(Bullet)`
