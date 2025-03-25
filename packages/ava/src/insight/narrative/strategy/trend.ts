@@ -38,7 +38,7 @@ export default class TrendNarrativeStrategy extends InsightNarrativeStrategy<Tre
     ],
     'en-US': [
       {
-        template: 'In ${dateRange}, the ${measure} goes ${trend}.',
+        template: 'In ${dateRange}, the ${measure} is ${trend}.',
         variableMetaMap,
       },
     ],
