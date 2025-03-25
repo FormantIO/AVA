@@ -29,7 +29,7 @@ export const changePointAugmentedMarksStrategy = (insight: InsightInfo<ChangePoi
         backgroundRadius: 2,
         connector: true,
         startMarker: true,
-        startMarkerFill: '#2C3542',
+        startMarkerFill: '#1c1e2d',
         startMarkerFillOpacity: 0.65,
       },
     });

@@ -1,6 +1,6 @@
 {
   "name": "@formant/ava-react",
-  "version": "3.3.17-formant",
+  "version": "3.3.18-formant",
   "description": "React components of AVA.",
   "author": {
     "name": "formant",
@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "@formant/ava": "3.4.5-formant",
+    "@formant/ava": "3.4.6-formant",
     "@antv/g2": "^5.0.8",
     "canvg": "^4.0.1",
     "classnames": "^2.3.2",
