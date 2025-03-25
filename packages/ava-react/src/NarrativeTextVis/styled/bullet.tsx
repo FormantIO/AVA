@@ -19,7 +19,23 @@ export const Bullet = styled.div<ThemeStylesProps>`
 export const Ol = styled(Bullet)`
   list-style-type: decimal;
   max-height: 100px;
-  overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: #aaa;
+}
+
+&::-webkit-scrollbar-thumb {
+    background: #393812;
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+&::-webkit-scrollbar-corner {
+    background: #000;
+}
+
 `;
 
 export const Ul = styled(Bullet)`
