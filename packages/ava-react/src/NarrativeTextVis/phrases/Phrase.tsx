@@ -92,10 +92,10 @@ function renderPhraseByDescriptor({
   const showTooltip = tooltip && (tooltip?.title(value, metadata, themeStyles) as TooltipProps['title']);
   return !isNil(showTooltip) ? (
     <Tooltip
-      color={theme === 'dark' ? 'white' : undefined}
+      color={'white'}
       {...tooltip}
       overlayInnerStyle={
-        theme === 'dark' ? { color: getThemeColor({ colorToken: 'colorBase', theme: 'light' }) } : undefined
+        { color: getThemeColor({ colorToken: 'colorBase', theme: 'dark' }) }
       }
       title={showTooltip}
     >

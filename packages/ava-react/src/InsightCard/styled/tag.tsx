@@ -4,11 +4,11 @@ export const Tag = styled.span`
   display: inline-block;
   margin-right: 4px;
   padding: 3px;
-  color: #2ec495;
+  color: #0a0b10;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  background-color: #3b4668;
+  background-color: #f89973;
   border-radius: 2px;
 `;
 

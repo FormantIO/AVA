@@ -9,9 +9,11 @@ export const SubspaceDescription = ({ subspaceDescription }: { subspaceDescripti
     <Typography.Text
       ellipsis={{ tooltip: subspaceDescription }}
       style={{
-        display: 'block',
-        color: 'rgba(0, 0, 0, 0.3)',
-        backgroundColor: 'rgba(0, 0, 0, 0.02)',
+        display: 'inline-block',
+        color: '#2ec495',
+        padding: '2px',
+        borderRadius: '4px',
+        backgroundColor: '#282f45',
         marginTop: '10px'
       }}
     >

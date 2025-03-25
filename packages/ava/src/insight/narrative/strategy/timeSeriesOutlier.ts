@@ -64,11 +64,11 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
         variableMetaMap,
       },
       {
-        template: '${.x}: ${measure} at ${.y} (${.diffDesc} ${.diff} above baseline)',
+        template: '${.x}: ${measure} at ${.y} (${.diffDesc} ${.diff} baseline)',
         displayType: 'bullet',
         bulletOrder: true,
         useVariable: 'outliers',
-        variableMetaMap,
+        variableMetaMap,  
       },
     ],
   };

@@ -9,7 +9,7 @@ export const P = styled.p<ThemeStylesProps & Pick<TextParagraphSpec, 'indents'>>
   white-space: pre-wrap; // 默认 pre 显示，可以显示空格和转义字符
   font-family: PingFangSC, sans-serif;
   color: #bac4e2;
-  font-size: ${({ size }) => getFontSize(size)};
+  font-size: 12px;
   min-height: 24px;
   line-height: ${({ size }) => getLineHeight(size)};
   margin-bottom: 4px;
