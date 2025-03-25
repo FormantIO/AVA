@@ -21,21 +21,21 @@ export const Ol = styled(Bullet)`
   max-height: 100px;
   overflow: auto;
   &::-webkit-scrollbar {
-    height: 12px;
-    width: 12px;
-    background: #aaa;
-}
+    background: transparent;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 
-&::-webkit-scrollbar-thumb {
-    background: #393812;
-    -webkit-border-radius: 1ex;
+  &::-webkit-scrollbar-thumb {
+    background: #bac4e2;
+    border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
-}
+  }
 
-&::-webkit-scrollbar-corner {
-    background: #000;
-}
-
+  &::-webkit-scrollbar-corner {
+    background: #bac4e2;
+  }
 `;
 
 export const Ul = styled(Bullet)`
