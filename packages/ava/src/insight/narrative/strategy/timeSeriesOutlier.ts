@@ -61,6 +61,7 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
       {
         template:
           '${total} outliers detected for ${measure} during ${dateRange}',
+        displayType: 'paragraph',
         variableMetaMap,
       },
       {

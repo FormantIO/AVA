@@ -36,6 +36,8 @@ export type InsightCardProps = CommonProps &
   InsightCardEventHandlers & {
     /** title of insight card, analysis name and measure name by default 洞察卡片的标题，默认为一个分析类型+分析指标名称 */
     title?: ((defaultTitle?: ReactNode) => ReactNode) | ReactNode;
+    period?: string;
+
     /** basic info of an insight, if not defined, will be referred by autoInsightOptions. One of `insightInfo` and `autoInsightOptions` must be assigned 洞察结果数据，如果不传入，需要通过配置`autoInsightOptions` 指定自动产生洞察结果的方式。`autoInsightOptions` 和 `insightInfo` 至少有一个必须被赋值 */
     insightInfo?: InsightCardInfo;
     /** tools in the header of card, by default, there are no tools 标题右侧的工具栏 */

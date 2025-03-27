@@ -39,7 +39,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({
   const [dataStatus, setDataStatus] = useState<InsightDataStatus>('SUCCESS');
   const [errorMessage, setErrorMessage] = useState<string>('');
   const pluginManager = useRef<NtvPluginManager>(new NtvPluginManager([...insightCardPresetPlugins, ...extraPlugins]));
-  const { measures = [], dimensions = [], patterns = [] } = currentInsightInfo || {};
+  const { measures = [], dimensions = [], patterns = [], subspace = [], data = [] } = currentInsightInfo || {};
   const ref = useRef<HTMLDivElement>(null);
 
   const calculateAndSetInsightPatterns = useCallback(() => {
@@ -140,7 +140,7 @@ export const InsightCard: React.FC<InsightCardProps> = ({
 
   return (
     <Container className={cx(className, prefixCls)} style={{ ...styles, backgroundColor: '#2d3855' }} ref={ref}>
-      <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} headerTools={headerTools} />
+      <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} subspace={subspace} headerTools={headerTools} />
       {/* content */}
       <Spin spinning={dataStatus === 'RUNNING'}>
         {dataStatus === 'SUCCESS' && !!contentSpec ? (

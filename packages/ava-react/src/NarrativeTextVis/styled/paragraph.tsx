@@ -11,9 +11,14 @@ export const P = styled.p<ThemeStylesProps & Pick<TextParagraphSpec, 'indents'>>
   color: #bac4e2;
   font-size: 12px;
   min-height: 24px;
-  line-height: ${({ size }) => getLineHeight(size)};
+      font-size: 16px;
+      line-height: 24px;
   margin-bottom: 4px;
   text-indent: ${({ indents }) => indents?.find((item) => item.type === 'first-line')?.length};
   padding-left: ${({ indents }) => indents?.find((item) => item.type === 'left')?.length};
   padding-right: ${({ indents }) => indents?.find((item) => item.type === 'right')?.length};
+  span {
+    font-size: 15px;
+    line-height: 24px;
+  }
 `;

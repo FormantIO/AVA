@@ -11,6 +11,8 @@ import { presetPluginManager } from '../chore/plugin';
 
 import type { HeadingParagraphSpec } from '@formant/ava';
 import type { ExtensionProps, PhraseEvents, ThemeStylesProps } from '../types';
+import { Alert, AlertDescription, AlertTitle, AlertTitleRow } from '../../InsightCard/Title/customStyled';
+import { AlertCircle } from 'lucide-react';
 
 type HeadingProps = ExtensionProps &
   ThemeStylesProps &
@@ -37,8 +39,13 @@ export function Heading({
   const Tag = Elements[`H${weight}`];
 
   return (
-    <Tag {...themeStyles} className={cx(`${NTV_PREFIX_CLS}-h${weight}`, spec.className)} style={spec.styles}>
+    
+           
+         
+          <Tag {...themeStyles} className={cx(`${NTV_PREFIX_CLS}-h${weight}`, spec.className)} style={spec.styles}>
       <Phrases spec={spec.phrases} pluginManager={pluginManager} {...themeStyles} {...events} />
     </Tag>
+        
+    
   );
 }

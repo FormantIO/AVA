@@ -41,8 +41,8 @@ export const generateContentVisSpec = (
     const chartSpecs: G2Spec[] = [];
 
     if (insightInfo.subspace?.length) {
-      const subspaceDescriptionSpec = getSubspaceDescriptionSpec(insightInfo.subspace);
-      narrativeParagraphs.push(subspaceDescriptionSpec);
+      // const subspaceDescriptionSpec = getSubspaceDescriptionSpec(insightInfo.subspace);
+      // narrativeParagraphs.push(subspaceDescriptionSpec);
     }
 
     visualizationSpecs.forEach((visualizationSpec) => {

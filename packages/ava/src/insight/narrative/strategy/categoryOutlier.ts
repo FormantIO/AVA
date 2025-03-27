@@ -34,6 +34,7 @@ export default class CategoryOutlierNarrativeStrategy extends InsightNarrativeSt
         template:
           '${measure} has ${total} categories in the ${dimension} that are prominent compared to other dimensions: &{outliers}.',
         variableMetaMap,
+        displayType: 'paragraph',
       },
     ],
   };
@@ -45,7 +46,7 @@ export default class CategoryOutlierNarrativeStrategy extends InsightNarrativeSt
         template: '${.x}',
         separator: getDefaultSeparator('zh-CN'),
         variableMetaMap,
-        useVariable: 'patterns',
+        useVariable: 'paragraph',
       },
     ],
     'en-US': [
@@ -53,8 +54,9 @@ export default class CategoryOutlierNarrativeStrategy extends InsightNarrativeSt
         templateId: 'outliers',
         template: '${.x}',
         separator: getDefaultSeparator('en-US'),
+       
         variableMetaMap,
-        useVariable: 'patterns',
+        useVariable: 'paragraph',
       },
     ],
   };
