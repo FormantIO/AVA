@@ -8,6 +8,7 @@ const Card = styled.div`
 
 const CardHeader = styled.div`
   padding: 0.5rem 0.5rem  0.25rem;
+  white-space:nowrap;
 `
 
 const HeaderContainer = styled.div`
@@ -43,6 +44,7 @@ const Badge = styled.span`
   padding: 0.125rem 0.5rem;
   border-radius: 9999px;
   margin-left: 0.75rem;
+  margin-right: 0.75rem;
 `
 
 const CardContent = styled.div`
