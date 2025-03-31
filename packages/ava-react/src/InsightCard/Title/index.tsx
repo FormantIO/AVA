@@ -10,14 +10,14 @@ import { Badge, Card, CardDescription, CardHeader, CardTitle, Highlight, HeaderC
 
 export type TitleProps = Pick<InsightCardProps, 'headerTools' | 'title' | 'visualizationOptions' |  'period'  > &
   Pick<InsightCardInfo, 'measures' | 'dimensions' | 'patterns' | 'subspace'>;
-export const Title: React.FC<TitleProps> = ({ title, patterns, measures, headerTools, visualizationOptions, dimensions, subspace }) => {
+export const Title: React.FC<TitleProps> = ({ title, patterns, measures, headerTools, visualizationOptions, dimensions, period, subspace }) => {
   const prefixCls = INSIGHT_CARD_PREFIX_CLS;
   const insightTypes = uniq(patterns?.map((pattern) => pattern.type) ?? []);
   const measureNames = uniq(measures?.map((measure) => measure.fieldName)).join(',');
   const algorithmNameMap = visualizationOptions?.lang === 'zh-CN' ? ALGORITHM_NAME_MAP_ZH : ALGORITHM_NAME_MAP;
-  const analysisName = insightTypes.map((algorithm) => algorithmNameMap[algorithm]).join(',') ?? '';
-
-
+  const capitalize = s => s && String(s[0]).toUpperCase() + String(s).slice(1);
+  const analysisName = insightTypes.map((algorithm) => capitalize(algorithmNameMap[algorithm])).join(',') ?? '';
+ 
   const newTitle  = ( <Card>
     <CardHeader>
       <HeaderContainer>

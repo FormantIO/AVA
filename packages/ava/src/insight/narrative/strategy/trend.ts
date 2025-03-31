@@ -7,6 +7,8 @@ import { InsightNarrativeStrategy } from './base';
 
 import type { InsightType, Language, InsightInfo, TrendInfo, TrendType } from '../../types';
 import type { ParagraphSpec, Structure } from '../../../ntv/types';
+import { formatDateRange } from "little-date";
+
 
 const trendMapping: Record<TrendType, string> = {
   decreasing: '下降',
@@ -38,7 +40,7 @@ export default class TrendNarrativeStrategy extends InsightNarrativeStrategy<Tre
     ],
     'en-US': [
       {
-        template: 'In ${dateRange}, the ${measure} is ${trend}.',
+        template: 'There is a signifcant ${trend} trend for ${measure} during ${dateRange} with a slope of ${slope}X.',
         variableMetaMap,
       },
     ],
@@ -47,12 +49,17 @@ export default class TrendNarrativeStrategy extends InsightNarrativeStrategy<Tre
   generateTextSpec(insightInfo: InsightInfo<TrendInfo>, lang: Language) {
     const { patterns, data } = insightInfo;
     const { dimension, measure, trend } = patterns[0];
+    const regression = patterns[0].regression;
+
+   
+   
     const spec = generateTextSpec({
       structures: TrendNarrativeStrategy.structures[lang],
       variable: {
-        dateRange: `${first(data)[dimension]}~${last(data)[dimension]}`,
+        dateRange: `${formatDateRange(new Date(first(data)[dimension]), new Date(last(data)[dimension]), {includeTime: false})}`,
         measure,
         trend: lang === 'en-US' ? trend : trendMapping[trend],
+        slope: regression.equation[0],
       },
     });
 

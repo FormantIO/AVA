@@ -30,6 +30,12 @@ export function TextLine({
   let baseText = "Anamoly was detected";
   if (JSON.stringify(spec).includes("outliers")) {
     baseText = "Time Series Outlier Detected";
+  } else if (JSON.stringify(spec).includes("trend")) {
+    baseText = "Trend Anamoly Detected";
+  } else if (JSON.stringify(spec).includes("correlated")) {
+    baseText = "Correlation Detected";
+  } else if (JSON.stringify(spec).includes("significantly higher than the other dimensions")) {
+    baseText = "Majority Anamoly Detected";
   }
   return (
     <Alert>
