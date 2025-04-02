@@ -1,6 +1,6 @@
 {
   "name": "@formant/ava",
-  "version": "3.4.17-formant",
+  "version": "3.4.18-formant",
   "description": "A framework for automated visual analytics.",
   "author": {
     "name": "formant",
@@ -59,7 +59,7 @@
     "@antv/smart-color": "^0.2.1",
     "bayesian-changepoint": "^1.0.1",
     "csstype": "^3.1.2",
-    "date-fns": "^4.1.0",
+    "date-fns": "^2.30.0",
     "heap-js": "^2.1.6",
     "little-date": "^1.0.0",
     "regression": "^2.0.1",
