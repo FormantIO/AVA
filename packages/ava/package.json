@@ -1,6 +1,6 @@
 {
   "name": "@formant/ava",
-  "version": "3.4.16-formant",
+  "version": "3.4.17-formant",
   "description": "A framework for automated visual analytics.",
   "author": {
     "name": "formant",
@@ -63,8 +63,7 @@
     "heap-js": "^2.1.6",
     "little-date": "^1.0.0",
     "regression": "^2.0.1",
-    "tslib": "^2.3.1",
-    "twix": "^1.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@antv/algorithm": "^0.1.25",

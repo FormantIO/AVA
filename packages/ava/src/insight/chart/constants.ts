@@ -1,8 +1,8 @@
 import { ChartType, InsightType } from '../types';
 
 export const INSIGHT_COLOR_PLATTE: Record<string, string> = {
-  highlight: '#E09322',
-  outlier: '#CB5140',
+  highlight: '#f89973',
+  outlier: '#ea719d',
   font: '#bac4e2',
   defaultPointColor: '#fff',
 } as const;
@@ -13,7 +13,7 @@ export const TEXT_STYLE = {
   textAlign: 'center',
   fill: INSIGHT_COLOR_PLATTE.font,
   fontFamily: 'Moderat',
-  opacity: 0.65,
+  opacity: 0.85,
 };
 
 export const ChartTypeMap: Record<InsightType, ChartType> = {
