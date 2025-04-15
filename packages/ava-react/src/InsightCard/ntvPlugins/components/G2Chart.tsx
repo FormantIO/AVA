@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 
-import { Chart, G2Spec } from '@antv/g2';
+import { Chart, G2Spec, ThemeTypes } from '@antv/g2';
 
 import { INSIGHT_CARD_PREFIX_CLS } from '../../constants';
 
 import { useTheme } from 'styled-components';
+
+
 
 export interface IThemeConfig {
   name: string;
@@ -22,6 +24,8 @@ export const getSelectedColorSetFromStorage = (
   );
 };
 
+
+
 export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number; width?: number }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const chartRef = React.useRef<Chart>(null);
@@ -29,15 +33,21 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
 
   const theme = useTheme();
 
+
+
   const themeList = getSelectedColorSetFromStorage();
 
-  const isDark = themeList !== "light" || theme?.["--color-action-primary"] === "#18d2ff";
+  const isDark =  themeList !== "light";
 
   
   // Accessing the "--color-text-module" value from the theme object
 
   const renderChart = async () => {
-    const updatedSpec = {  paddingTop: 20, axis: {...spec.axis, autohide: true}, scale:  {...spec.scale, x: {nice: true}, y: {nice: true}, theme: isDark ? 'classicDark' : 'light' } };
+    const updatedSpec = {  paddingTop: 20, axis: 
+      {...spec.axis, label: 
+        {fillColorLight: 'black', fillColorDark: '#ffffff'},
+         style: {fill: 'black'},   autohide: true}, scale: 
+          {...spec.scale, x: {nice: true}, y: {nice: true} }};
    
     if (!chartRef?.current) {
       
@@ -45,9 +55,12 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
         container: containerRef?.current,
         autoFit: true,
         padding: 'auto',
+       
       });
         chartRef.current.options({ 
-          ...spec, ...updatedSpec});
+          ...spec, ...updatedSpec , theme: isDark ? 'classicDark' : 'light' });
+
+          
     //   if (isDark) {
     //     chartRef.current.theme({theme: isDark ? 'classicDark' : 'light',
     //       backgroundColor: '#2d3855', // '--color-background-primary',
@@ -116,8 +129,10 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
         autoFit: true,
         padding: 'auto',
       });
+
+      // chartRef.current.theme('light')
       chartRef.current.options({ 
-        ...spec, ...updatedSpec});
+        ...spec, ...updatedSpec, theme: isDark ? 'classicDark' : 'light' });
         
        
       } 
@@ -136,9 +151,12 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
 
   useEffect(() => {
     const handleResize = () => {
+      // const updatedSpec = {  paddingTop: 20, axis: {...spec.axis, autohide: true}, scale:  {...spec.scale, x: {nice: true}, y: {nice: true}, theme: isDark ? 'classicDark' : 'light' } };
       chartRef.current?.options({
         width: containerRef.current?.clientWidth,
         height: containerRef.current?.clientHeight,
+        // theme: "light",
+        // ...updatedSpec
       });
       chartRef.current?.render();
     };
