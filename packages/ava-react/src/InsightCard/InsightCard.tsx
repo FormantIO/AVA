@@ -18,6 +18,7 @@ import { defaultMoreButton } from './Toolbar/defaultTools';
 import type { InsightInfo } from '@formant/ava';
 import type { Tool } from './Toolbar/types';
 import type { InsightCardProps, InsightCardInfo, InsightDataStatus } from './types';
+import { ThemeProvider } from './Theme';
 
 export const InsightCard: React.FC<InsightCardProps> = ({
   className,
@@ -139,7 +140,8 @@ export const InsightCard: React.FC<InsightCardProps> = ({
   };
 
   return (
-    <Container className={cx(className, prefixCls)} style={{ ...styles, backgroundColor: '#2d3855' }} ref={ref}>
+ 
+    <Container className={cx(className, prefixCls)} ref={ref}>
       <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} subspace={subspace} headerTools={headerTools} />
       {/* content */}
       <Spin spinning={dataStatus === 'RUNNING'}>
