@@ -44,7 +44,7 @@ export function Headline({
   return (
     <Alert>
           <AlertTitleRow>
-            <AlertCircle size={16} color="#ef4444" />
+            <AlertCircle size={16} />
             <AlertTitle>Time Series Outlier Detected</AlertTitle>
           </AlertTitleRow>
           <AlertDescription>
