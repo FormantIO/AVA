@@ -46,7 +46,8 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
     const updatedSpec = {  paddingTop: 20, axis: 
       {...spec.axis, label: 
         {fillColorLight: 'black', fillColorDark: '#ffffff'},
-         style: {fill: 'black'},   autohide: true}, scale: 
+        x: { autohide: true, labelAutoRotate: true},
+         style: {fill: 'black'},   autohide: true, labelAutoRotate: true}, scale: 
           {...spec.scale, x: {nice: true}, y: {nice: true} }};
    
     if (!chartRef?.current) {
@@ -59,6 +60,7 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
       });
         chartRef.current.options({ 
           ...spec, ...updatedSpec , theme: isDark ? 'classicDark' : 'light' });
+          
 
           
     //   if (isDark) {
@@ -135,11 +137,10 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
         ...spec, ...updatedSpec, theme: isDark ? 'classicDark' : 'light' });
         
        
-      } 
-    
+      }
 
-    if (!isRendering.current) {
-      isRendering.current = true;
+      if (!isRendering.current) {
+        isRendering.current = true;
       await chartRef.current?.render();
       isRendering.current = false;
     }
@@ -151,13 +152,20 @@ export const G2Chart = ({ spec, height, width }: { spec: G2Spec; height?: number
 
   useEffect(() => {
     const handleResize = () => {
-      // const updatedSpec = {  paddingTop: 20, axis: {...spec.axis, autohide: true}, scale:  {...spec.scale, x: {nice: true}, y: {nice: true}, theme: isDark ? 'classicDark' : 'light' } };
+      const updatedSpec = {  paddingTop: 20, axis: 
+        {...spec.axis, label: 
+          {fillColorLight: 'black', fillColorDark: '#ffffff'},
+          x: { autohide: true, labelAutoRotate: true},
+           style: {fill: 'black'},   autohide: true, labelAutoRotate: true}, scale: 
+            {...spec.scale, x: {nice: true}, y: {nice: true} }};
+      
       chartRef.current?.options({
         width: containerRef.current?.clientWidth,
         height: containerRef.current?.clientHeight,
         // theme: "light",
-        // ...updatedSpec
+        ...updatedSpec
       });
+
       chartRef.current?.render();
     };
     const resizeObserver = new ResizeObserver(handleResize);
