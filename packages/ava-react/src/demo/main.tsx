@@ -227,6 +227,740 @@ const App = () => {
     }
   ];
 
+  const thirdSampleData =  [
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Could not upload the mission: : "
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Could not parse the graph"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to open file for reading: /spot_integration_top/maps/graph_mission_!"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Mission ended with state: 1"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the velocity command: "
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Robot is estopped. Please use an external E-Stop client, such as the estop Python SDK example, to configure E-Stop."
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the stand command as we don't own the lease and can't take it "
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Uploading graph from: /spot_integration_top/maps/graph_mission_1"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Playing mission"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the teleop command as we don't own the lease and can't take it"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the stand command as we don't own the lease and can't take it"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the play mission command as we don't own the lease and can't take it "
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to open file for reading: /spot_integration_top/maps/missions/mission_!"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Finished uploading mission"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Could not upload the mission: :"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the teleop command as we don't own the lease and can't take it "
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the play mission command as we don't own the lease and can't take it"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "The StandCommand failed or timed out."
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Could not parse the mission file"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the velocity command:"
+    },
+    {
+        "time": "2024-12-10 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Uploading graph from: /spot_integration_top/maps/graph_mission_!"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the teleop command as we don't own the lease and can't take it "
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the stand command as we don't own the lease and can't take it"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the teleop command as we don't own the lease and can't take it"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Finished uploading mission"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "No dock found"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Failed to complete the stand command as we don't own the lease and can't take it "
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Mission ended with state: 1"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Playing mission"
+    },
+    {
+        "time": "2024-12-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Uploading graph from: /spot_integration_top/maps/graph_mission_1"
+    },
+    {
+        "time": "2024-12-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2024-12-20 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2024-12-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2024-12-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2024-12-30 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-01 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-02 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-02 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-07 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-07 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-08 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-09 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-09 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-12 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-12 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-13 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-01-16 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-17 00:00:00",
+        "value": 1,
+        "label": "warning",
+        "message": "broken wheel"
+    },
+    {
+        "time": "2025-01-17 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "oh no"
+    },
+    {
+        "time": "2025-01-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "bad camera"
+    },
+    {
+        "time": "2025-01-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-20 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-21 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-21 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-22 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-22 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-25 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-27 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-01-27 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-27 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-28 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-01-28 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-28 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-01-29 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "bosdyn.api.PowerCommandResponse (KeepaliveMotorsOffError): Cannot power on while Keepalive requests motors off."
+    },
+    {
+        "time": "2025-01-30 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "bosdyn.api.PowerCommandResponse (KeepaliveMotorsOffError): Cannot power on while Keepalive requests motors off."
+    },
+    {
+        "time": "2025-01-31 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "bosdyn.api.PowerCommandResponse (KeepaliveMotorsOffError): Cannot power on while Keepalive requests motors off."
+    },
+    {
+        "time": "2025-01-31 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-01-31 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-05 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-12 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-12 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-13 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Docking Failed, status: 'STATUS_ERROR_NOT_AVAILABLE'"
+    },
+    {
+        "time": "2025-02-13 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-02-13 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-13 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-14 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-02-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-18 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-02-18 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-19 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-19 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-20 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-20 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-25 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-25 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-26 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-27 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-02-27 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-02-28 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-01 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-01 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-03-01 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-03 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "SpotBase Service Restarted, starting up..."
+    },
+    {
+        "time": "2025-03-03 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-03 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "bosdyn.api.PowerCommandResponse (EstoppedError): Cannot power on while estopped; inspect EStopState for more info."
+    },
+    {
+        "time": "2025-03-03 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "SpotBase Service Started."
+    },
+    {
+        "time": "2025-03-03 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "Restarting SpotBase Service"
+    },
+    {
+        "time": "2025-03-04 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-04 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "bosdyn.api.PowerCommandResponse (KeepaliveMotorsOffError): Cannot power on while Keepalive requests motors off."
+    },
+    {
+        "time": "2025-03-05 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Docking Failed, status: 'STATUS_ERROR_NOT_AVAILABLE'"
+    },
+    {
+        "time": "2025-03-05 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-11 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-12 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-03-12 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-13 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-17 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-18 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-19 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-21 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-03-21 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-22 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device online"
+    },
+    {
+        "time": "2025-03-22 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "device offline"
+    },
+    {
+        "time": "2025-03-24 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "vahag got in the way of the robot"
+    },
+    {
+        "time": "2025-03-28 00:00:00",
+        "value": 1,
+        "label": "error",
+        "message": "Dock not in view, please move closer to dock and re-issue command."
+    },
+    {
+        "time": "2025-03-28 00:00:00",
+        "value": 1,
+        "label": "info",
+        "message": "someone in the way"
+    }
+];
 
 
   
@@ -572,7 +1306,7 @@ const App = () => {
 
   const fetchInsights =  () => {
  //generateSampleData()
-  const insightResult = getInsights(secondSampleData , {
+  const insightResult = getInsights(thirdSampleData , {
     // limit: 10,
     // measures: [
     //   { fieldName: "life_expect", method: "MEAN" },
