@@ -66,8 +66,6 @@ const AlertTitleRow = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.25rem;
-
-
 `
 
 const AlertTitle = styled.h3`
