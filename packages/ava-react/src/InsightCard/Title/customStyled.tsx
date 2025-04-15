@@ -22,7 +22,7 @@ const TitleContainer = styled.div``
 const CardTitle = styled.h2`
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: #bac4e2;
   margin: 0;
   display: flex;
   align-items: center;
@@ -31,13 +31,13 @@ const CardTitle = styled.h2`
 const CardDescription = styled.p`
   margin-top: 0.25rem;
   font-size: 0.875rem;
-  color: var(--color-text-secondary);
+  color: #bac4e2;
 `
 
 const Badge = styled.span`
   display: inline-flex;
   align-items: center;
-  background-color: var(--color-severity-critical);
+  background-color: #ef4444;
   color: white;
   font-size: 0.75rem;
   font-weight: 500;
@@ -54,8 +54,8 @@ const CardContent = styled.div`
 const Alert = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--formant-steel-01);
-  border: 2px solid var(--color-border-primary);
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: 6px;
   padding: 0.75rem;
   margin-bottom: 1rem;
@@ -66,22 +66,20 @@ const AlertTitleRow = styled.div`
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.25rem;
-
-
 `
 
 const AlertTitle = styled.h3`
   font-size: 0.875rem;
   font-weight: 500;
   margin: 0;
-  color: var(--color-text-primary);
+  color: #bac4e2;
 `
 
 const AlertDescription = styled.p`
   font-size: 0.75rem;
   margin: 0;
   padding-left: 1.25rem;
-  color: var(--color-text-primary);
+  
 `
 
 const Highlight = styled.span`
@@ -96,19 +94,18 @@ const TooltipContainer = styled.div`
 const TooltipIcon = styled(Info)`
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--formant-steel-01);
+  color: #64748b;
   cursor: help;
 `
 
 const TooltipContent = styled.div`
   position: absolute;
   top: 100%;
-  right: -5px;
-     max-width: 22rem;
-     white-space: nowrap;
+  right: 0;
+  width: 200px;
   padding: 0.5rem;
-  background-color:var(--color-background-surface);
-  color: var(--color-text-primary);
+  background-color: #1e293b;
+  color: white;
   border-radius: 4px;
   font-size: 0.75rem;
   z-index: 10;
@@ -128,7 +125,7 @@ const TooltipContent = styled.div`
     right: 10px;
     border-width: 0 6px 6px 6px;
     border-style: solid;
-    border-color: transparent transparent var(--color-background-surface) transparent;
+    border-color: transparent transparent #1e293b transparent;
   }
 `
 export { Card, CardHeader, HeaderContainer, TitleContainer, CardTitle, CardDescription, Badge, CardContent, Alert, AlertTitleRow, AlertTitle, AlertDescription, Highlight, TooltipContainer, TooltipIcon, TooltipContent };

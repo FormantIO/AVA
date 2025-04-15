@@ -61,16 +61,16 @@ function renderPhraseByDescriptor({
 
   let defaultNode: ReactNode = (
     <Entity
-      // {...themeStyles}
+      {...themeStyles}
       style={{
-        // ...functionalize(descriptorStyle, {})(spec?.value, metadata as any, themeStyles),
-        // ...specStyles,
+        ...functionalize(descriptorStyle, {})(spec?.value, metadata as any, themeStyles),
+        ...specStyles,
       }}
       className={cx(
-        // `${NTV_PREFIX_CLS}-value`,
-        // isEntityPhrase(spec) ? `${NTV_PREFIX_CLS}-${kebabCase(spec.metadata.entityType)}` : '',
-        // ...functionalize(classNames, [])(spec?.value, metadata as any, themeStyles)
-     )}
+        `${NTV_PREFIX_CLS}-value`,
+        isEntityPhrase(spec) ? `${NTV_PREFIX_CLS}-${kebabCase(spec.metadata.entityType)}` : '',
+        ...functionalize(classNames, [])(spec?.value, metadata as any, themeStyles)
+      )}
     >
       {content(value, metadata, themeStyles)}
     </Entity>
@@ -92,10 +92,10 @@ function renderPhraseByDescriptor({
   const showTooltip = tooltip && (tooltip?.title(value, metadata, themeStyles) as TooltipProps['title']);
   return !isNil(showTooltip) ? (
     <Tooltip
-      // color={'black'}
+      color={'black'}
       {...tooltip}
       overlayInnerStyle={
-       undefined 
+        { color: getThemeColor({ colorToken: 'colorBase', theme: 'dark' }) }
       }
       title={showTooltip}
     >
@@ -143,7 +143,7 @@ export const Phrase: React.FC<PhraseProps> = ({
         </a>
       );
     return (
-      <span {...eventProps}  >
+      <span {...eventProps} style={phrase?.styles} className={cx(phrase?.className)}>
         {defaultText}
       </span>
     );
@@ -153,7 +153,7 @@ export const Phrase: React.FC<PhraseProps> = ({
   // 使用 pre 标签渲染特殊转义字符
   if (isEscapePhrase(phrase))
     return (
-      <pre {...eventProps}  >
+      <pre {...eventProps} className={cx(phrase.className)} style={phrase.styles}>
         {phrase.value}
       </pre>
     );
@@ -164,8 +164,8 @@ export const Phrase: React.FC<PhraseProps> = ({
     return (
       <FormulaWrapper
         {...eventProps}
-       
-       
+        className={cx(phrase.className, `${NTV_PREFIX_CLS}-formula`)}
+        style={phrase.styles}
         dangerouslySetInnerHTML={{
           __html: katex.renderToString(phrase.value, {
             throwOnError: false,

@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { InsightCard } from '../InsightCard';
 import { getInsights, InsightInfo } from "@formant/ava";
 import 'antd/dist/antd.css';
-import { ThemeProvider } from 'styled-components';
-import { darkTheme, GlobalStyles, lightTheme } from './theme-provider';
+
 // New function to generate sample data
 const generateSampleData = (days: number = 7, baseValue: number = 100, trend: number = 5, noise: number = 2) => {
   const data = [];
@@ -33,8 +32,6 @@ const generateSampleData = (days: number = 7, baseValue: number = 100, trend: nu
 
 const App = () => {
 
-    const [isDark, setIsDark] = useState(true);
-  const toggleTheme = () => setIsDark(!isDark);
    
     const [insights, setInsights] = useState<InsightInfo[]>([]);
   // Sample data for the InsightCard
@@ -601,17 +598,9 @@ const App = () => {
 
 
   return (
-   
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-     <GlobalStyles />
-
     <div style={{ padding: '20px' }}>
       <h1>AVA React Demo</h1>
       <div style={{ width: '600px', margin: '20px auto' }}>
-
-      <button onClick={toggleTheme}>
-            Toggle Theme
-          </button>
         
   {false ? (
     <div className="text-center py-4 text-gray-400">
@@ -634,7 +623,6 @@ const App = () => {
   )}
       </div>
     </div>
-    </ThemeProvider>
   );
 };
 

@@ -8,7 +8,7 @@ import type { ThemeStylesProps } from '../types';
 export const P = styled.p<ThemeStylesProps & Pick<TextParagraphSpec, 'indents'>>`
   white-space: pre-wrap; // 默认 pre 显示，可以显示空格和转义字符
   font-family: PingFangSC, sans-serif;
-  color: var(--color-text-primary);
+  color: #bac4e2;
   font-size: 12px;
   min-height: 24px;
       font-size: 16px;
