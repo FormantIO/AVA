@@ -5,6 +5,7 @@ import { getInsights, InsightInfo } from "@formant/ava";
 import 'antd/dist/antd.css';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, GlobalStyles, lightTheme } from './theme-provider';
+import ResizableSquareComponent from './ResizableSquare';
 // New function to generate sample data
 const generateSampleData = (days: number = 7, baseValue: number = 100, trend: number = 5, noise: number = 2) => {
   const data = [];
@@ -1357,13 +1358,16 @@ const App = () => {
     </div>
   ) : (
     insights.map((insight, index) => (
-      <InsightCard 
+        <ResizableSquareComponent width="400px" height="400px" >
+ <InsightCard 
         title={"$.cpu"}
         key={`insight-${index}`} 
         insightInfo={insight}
-        className="w-full" 
+        className="w-full h-full" 
         footerTools={[]}
       />
+        </ResizableSquareComponent>
+     
     ))
   )}
       </div>
