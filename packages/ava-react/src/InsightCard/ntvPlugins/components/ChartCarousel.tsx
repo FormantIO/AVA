@@ -6,6 +6,7 @@ import { G2Chart } from './G2Chart';
 
 import type { G2Spec } from '@antv/g2';
 
+
 export const ChartCarousel = ({
   charts,
   height = CHART_HEIGHT,
