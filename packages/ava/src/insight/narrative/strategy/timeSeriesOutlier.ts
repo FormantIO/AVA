@@ -9,7 +9,7 @@ import { getDiffDesc } from './helpers';
 import type { InsightType, Language, InsightInfo, TimeSeriesOutlierInfo } from '../../types';
 import type { ParagraphSpec, Structure } from '../../../ntv/types';
 import { formatDateRange } from "little-date";
-import { formatDate } from 'date-fns';
+import { format } from 'date-fns';
 
 const variableMetaMap = {
   dateRange: {
@@ -95,7 +95,7 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
             ...point,
             base,
             diffDesc: getDiffDesc(diff, lang),
-            x: formatDate(new Date(point.x), 'MMM d, yyyy'),
+            x: format(new Date(point.x), 'MMM d, yyyy'),
             diff,
           };
         }),
