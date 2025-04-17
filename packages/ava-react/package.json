@@ -54,12 +54,13 @@
   },
   "dependencies": {
     "@antv/g2": "^5.0.8",
-    "@formant/ava": "3.4.16-formant",
+    "@formant/ava": "3.4.20-formant",
     "canvg": "^4.0.1",
     "classnames": "^2.3.2",
     "katex": "^0.16.4",
     "lodash": "^4.17.21",
     "lucide-react": "^0.484.0",
+    "date-fns": "^2.30.0",
     "styled-components": "^5.3.5",
     "uuid": "^8.3.2"
   },
