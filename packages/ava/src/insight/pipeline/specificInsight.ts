@@ -1,5 +1,4 @@
 import { size } from 'lodash';
-import { G2Spec } from '@antv/g2';
 
 import {
   generateInsightChartSpec,
@@ -9,6 +8,7 @@ import {
   AugmentedMarks,
   lowVarianceAugmentedMarkStrategy,
   categoryOutlierAugmentedMarksStrategy,
+  InsightChartSpec,
 } from '../chart';
 import { insightPatternsExtractor } from '../insights';
 import {
@@ -51,16 +51,12 @@ export const getAnnotationSpec = (insightInfo: InsightInfo<PatternInfo>): Augmen
 export const getChartSpecWithoutAugmentedMarks = (
   insightInfo: InsightInfo<PatternInfo>,
   insightType: InsightType
-): G2Spec => {
-  const chartMark = insight2ChartStrategy({
+): InsightChartSpec => {
+  const chartInsight = {
     ...insightInfo,
-    ...(size(insightInfo.patterns) === 0
-      ? {
-          patterns: [{ type: insightType }],
-        }
-      : {}),
-  });
-  return viewSpecStrategy([chartMark], insightInfo);
+    ...(size(insightInfo.patterns) === 0 ? { patterns: [{ type: insightType }] } : {}),
+  };
+  return viewSpecStrategy([insight2ChartStrategy(chartInsight)], chartInsight);
 };
 
 export const filterValidInsightInfoForAnnotationSpec = ({

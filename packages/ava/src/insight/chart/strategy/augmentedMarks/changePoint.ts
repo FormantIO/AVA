@@ -1,49 +1,31 @@
-import { Mark } from '@antv/g2';
 import { size } from 'lodash';
 
 import { ChangePointInfo, InsightInfo } from '../../../types';
-import { INSIGHT_COLOR_PLATTE } from '../../constants';
 import { dataFormat } from '../../../../utils';
-import { pointMarkStrategy } from '../commonMarks/pointMark';
-import { textMarkStrategy } from '../commonMarks/textMark';
+import { pointMarkStrategy } from '../commonMarks';
 import { insight2ChartStrategy } from '../chart';
-import { ChangePointMark } from '../../types';
+import { ChangePointMark, InsightChartMark } from '../../types';
 import { augmentedMarks2Marks } from '../../utils';
 
 export const changePointAugmentedMarksStrategy = (insight: InsightInfo<ChangePointInfo>): ChangePointMark[] => {
   const { patterns } = insight;
-  const color = INSIGHT_COLOR_PLATTE.highlight;
 
   if (!size(patterns)) return [];
 
   const { measure } = patterns[0];
-  const changePointMarks: ChangePointMark[] = [];
-  patterns.forEach((pattern) => {
-    const pointMark = pointMarkStrategy([pattern], { style: { fill: color } });
-    const textMark = textMarkStrategy([pattern], {
-      formatter: dataFormat,
-      label: (pt) => `${pt.x}, ${measure}: ${pt.y}`,
-      style: {
-        dy: -20,
-        background: true,
-        backgroundRadius: 2,
-        connector: true,
-        startMarker: true,
-        startMarkerFill: '#1c1e2d',
-        startMarkerFillOpacity: 0.65,
-      },
-    });
-    changePointMarks.push({
-      changePoint: [pointMark, textMark],
-    });
-  });
-
-  return changePointMarks;
+  return patterns.map((pattern) => ({
+    changePoint: [
+      pointMarkStrategy([pattern], {
+        role: 'highlight',
+        name: 'change point',
+        label: (pt) => `${pt.x}, ${measure}: ${dataFormat(pt.y)}`,
+      }),
+    ],
+  }));
 };
 
-export const changePointStrategy = (insight: InsightInfo<ChangePointInfo>): Mark[] => {
+export const changePointStrategy = (insight: InsightInfo<ChangePointInfo>): InsightChartMark[] => {
   const chart = insight2ChartStrategy(insight);
-  const changePointMarks = changePointAugmentedMarksStrategy(insight);
-  const marks = augmentedMarks2Marks(changePointMarks);
+  const marks = augmentedMarks2Marks(changePointAugmentedMarksStrategy(insight));
   return [chart, ...marks];
 };

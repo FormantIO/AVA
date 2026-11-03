@@ -1,6 +1,5 @@
-import { G2Spec, Mark } from '@antv/g2';
-
 import { InsightInfo, PatternInfo } from '../../types';
+import { InsightChartMark, InsightChartSpec } from '../types';
 import {
   categoryOutlierStrategy,
   changePointStrategy,
@@ -12,10 +11,10 @@ import {
   viewSpecStrategy,
 } from '../strategy';
 
-export function generateInsightChartSpec(insight: InsightInfo<PatternInfo>): G2Spec {
+export function generateInsightChartSpec(insight: InsightInfo<PatternInfo>): InsightChartSpec {
   const { type: insightType } = insight.patterns[0];
 
-  const insightType2Strategy: Record<string, (insight: InsightInfo<PatternInfo>) => Mark[]> = {
+  const insightType2Strategy: Record<string, (insight: InsightInfo<PatternInfo>) => InsightChartMark[]> = {
     trend: trendStrategy,
     time_series_outlier: timeSeriesOutlierStrategy,
     category_outlier: categoryOutlierStrategy,
@@ -25,6 +24,6 @@ export function generateInsightChartSpec(insight: InsightInfo<PatternInfo>): G2S
     correlation: correlationStrategy,
   };
 
-  const marks = insightType2Strategy[insightType]?.(insight);
+  const marks = insightType2Strategy[insightType]?.(insight) ?? [];
   return viewSpecStrategy(marks, insight);
 }

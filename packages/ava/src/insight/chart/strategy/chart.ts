@@ -1,69 +1,46 @@
-import { Mark } from '@antv/g2';
-
 import { InsightInfo, InsightType } from '../../types';
-import { PIE_RADIUS_STYLE } from '../constants';
+import { PIE_RADIUS } from '../constants';
+import { InsightChartMark } from '../types';
 
-export const insight2ChartStrategy = (
-  insight: Omit<InsightInfo, 'visualizationSpecs' | 'patterns'> & { patterns: { type: InsightType }[] }
-): Mark => {
+type ChartInsight = Omit<InsightInfo, 'visualizationSpecs' | 'patterns'> & { patterns: { type: InsightType }[] };
+
+/** the mark that draws the insight data itself */
+export const insight2ChartStrategy = (insight: ChartInsight): InsightChartMark => {
   const { data, patterns, dimensions, measures } = insight;
   const { type: insightType } = patterns[0];
-  const commonSpec: Mark = {
-    data,
-    encode: {
-      x: dimensions[0].fieldName,
-      y: measures[0].fieldName,
-    },
-  };
+  const dimension = dimensions[0]?.fieldName;
+  const measure = measures[0]?.fieldName;
+  const points = () => data.map((datum) => ({ x: datum[dimension], y: Number(datum[measure]) }));
+
   // pie
   if (insightType === 'majority') {
     return {
-      ...commonSpec,
-      type: 'interval',
-      encode: {
-        color: dimensions[0].fieldName,
-        y: measures[0].fieldName,
-      },
-      transform: [{ type: 'stackY' }],
-      coordinate: {
-        type: 'theta',
-        innerRadius: PIE_RADIUS_STYLE.innerRadius,
-        outerRadius: PIE_RADIUS_STYLE.outerRadius,
-      },
-      tooltip: {
-        items: [{ field: dimensions[0].fieldName }, { field: measures[0].fieldName }],
-      },
+      type: 'arc',
+      role: 'primary',
+      name: measure,
+      data: data.map((datum) => ({ name: String(datum[dimension]), value: Number(datum[measure]) })),
+      ...PIE_RADIUS,
     };
   }
 
   // line
   if (insightType === 'trend' || insightType === 'time_series_outlier' || insightType === 'change_point') {
-    return {
-      ...commonSpec,
-      type: 'line',
-      style: {
-        lineWidth: 2,
-      },
-    };
+    return { type: 'line', role: 'primary', name: measure, data: points() };
   }
 
   // bar
   if (insightType === 'category_outlier' || insightType === 'low_variance') {
-    return {
-      ...commonSpec,
-      type: 'interval',
-    };
+    return { type: 'bar', role: 'primary', name: measure, data: points() };
   }
 
   // scatter
   if (insightType === 'correlation') {
+    const yMeasure = measures[1]?.fieldName;
     return {
-      ...commonSpec,
       type: 'point',
-      encode: {
-        x: measures[0]?.fieldName,
-        y: measures[1]?.fieldName,
-      },
+      role: 'primary',
+      name: `${measure} / ${yMeasure}`,
+      data: data.map((datum) => ({ x: Number(datum[measure]), y: Number(datum[yMeasure]) })),
     };
   }
   return null;

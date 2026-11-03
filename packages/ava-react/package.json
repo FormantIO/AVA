@@ -1,6 +1,6 @@
 {
   "name": "@formant/ava-react",
-  "version": "3.3.33-formant",
+  "version": "3.4.0-formant",
   "description": "React components of AVA.",
   "author": {
     "name": "formant",
@@ -53,14 +53,14 @@
     ]
   },
   "dependencies": {
-    "@antv/g2": "^5.0.8",
-    "@formant/ava": "3.4.21-formant",
+    "@formant/ava": "3.5.0-formant",
     "canvg": "^4.0.1",
     "classnames": "^2.3.2",
     "katex": "^0.16.4",
     "lodash": "^4.17.21",
     "lucide-react": "^0.484.0",
     "date-fns": "^2.30.0",
+    "echarts": "^5.6.0",
     "styled-components": "^5.3.5",
     "uuid": "^8.3.2"
   },

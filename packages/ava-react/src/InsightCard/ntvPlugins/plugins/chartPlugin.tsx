@@ -10,7 +10,7 @@ export const chartsDisplayPlugin = createCustomBlockFactory<ChartsSchema>({
   key: DISPLAY_CHARTS_PLUGIN_KEY,
   render(item) {
     const { chartSpecs } = item;
-    if (chartSpecs) {
+    if (chartSpecs?.length) {
       return <ChartCarousel charts={chartSpecs} />;
     }
     return null;

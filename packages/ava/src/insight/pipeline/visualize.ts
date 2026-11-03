@@ -44,10 +44,8 @@ export const generateHomogeneousInsightVisualizationSpec = (
   const schemas: InsightVisualizationSpec[] = [];
   patterns.forEach((pattern) => {
     const { insightType } = pattern;
-    const chartSpec = {};
     schemas.push({
       patternType: insightType,
-      chartSpec,
       narrativeSpec: generateInsightNarrative({ ...omit(insight, ['patterns']), ...pattern }, visualizationOptions),
     });
   });

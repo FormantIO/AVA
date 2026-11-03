@@ -6,13 +6,16 @@ import { isFunction } from 'lodash';
 import { getInsights } from '@formant/ava';
 
 import { copyToClipboard, NarrativeTextVis, NtvPluginManager, TextExporter } from '../NarrativeTextVis';
+import { InsightChartProvider } from '../InsightChart';
 
 import { generateContentVisSpec } from './utils/specGenerator';
 import { Title } from './Title';
 import { Toolbar } from './Toolbar';
 import { insightCardPresetPlugins } from './ntvPlugins';
+import { InsightCardPluginManagerContext } from './ntvPlugins/context';
 import { EXPORT_DATA_LABEL, INSIGHT_CARD_PREFIX_CLS } from './constants';
 import { Container } from './styled/container';
+import { insightCardThemeToCssVars } from './cardTheme';
 import { defaultMoreButton } from './Toolbar/defaultTools';
 
 import type { InsightInfo } from '@formant/ava';
@@ -34,6 +37,8 @@ export const InsightCard: React.FC<InsightCardProps> = ({
   autoInsightOptions,
   visualizationOptions,
   customContentSpec,
+  chart,
+  theme,
 }: InsightCardProps) => {
   const prefixCls = INSIGHT_CARD_PREFIX_CLS;
   const [currentInsightInfo, setCurrentInsightInfo] = useState<InsightCardInfo>(defaultInsightInfo);
@@ -141,26 +146,30 @@ export const InsightCard: React.FC<InsightCardProps> = ({
 
   return (
  
-    <Container className={cx(className, prefixCls)} ref={ref}>
-      <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} subspace={subspace} headerTools={headerTools} />
-      {/* content */}
-      <Spin spinning={dataStatus === 'RUNNING'}>
-        {dataStatus === 'SUCCESS' && !!contentSpec ? (
-          <>
-            <div className={`${prefixCls}-insight-result-container`}>
-              <NarrativeTextVis spec={contentSpec} size="small" pluginManager={pluginManager.current} />
-            </div>
-            {renderFooter()}
-          </>
-        ) : (
-          <Empty
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-            imageStyle={{ height: 24 }}
-            description={dataStatus !== 'RUNNING' ? 'no insights found' : ''}
-          />
-        )}
-      </Spin>
-      {dataStatus === 'ERROR' && <p>{errorMessage}</p>}
-    </Container>
+    <InsightChartProvider {...chart}>
+      <Container className={cx(className, prefixCls)} ref={ref} style={{ ...insightCardThemeToCssVars(theme), ...styles }}>
+        <Title title={title} measures={measures} dimensions={dimensions} patterns={patterns} subspace={subspace} headerTools={headerTools} />
+        {/* content */}
+        <Spin spinning={dataStatus === 'RUNNING'}>
+          {dataStatus === 'SUCCESS' && !!contentSpec ? (
+            <>
+              <div className={`${prefixCls}-insight-result-container`}>
+                <InsightCardPluginManagerContext.Provider value={pluginManager.current}>
+                  <NarrativeTextVis spec={contentSpec} size="small" pluginManager={pluginManager.current} />
+                </InsightCardPluginManagerContext.Provider>
+              </div>
+              {renderFooter()}
+            </>
+          ) : (
+            <Empty
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+              imageStyle={{ height: 24 }}
+              description={dataStatus !== 'RUNNING' ? 'no insights found' : ''}
+            />
+          )}
+        </Spin>
+        {dataStatus === 'ERROR' && <p>{errorMessage}</p>}
+      </Container>
+    </InsightChartProvider>
   );
 };

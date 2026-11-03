@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 
-import { CHART_HEIGHT, INSIGHT_CARD_PREFIX_CLS } from '../../constants';
+import { INSIGHT_CARD_PREFIX_CLS } from '../../constants';
+import { InsightChart } from '../../../InsightChart';
 
-import { G2Chart } from './G2Chart';
-
-import type { G2Spec } from '@antv/g2';
-
+import type { InsightChartSpec } from '@formant/ava';
 
 export const ChartCarousel = ({
   charts,
-  height = CHART_HEIGHT,
+  height,
   width,
 }: {
-  charts: G2Spec[];
+  charts: InsightChartSpec[];
+  /** overrides the height from the enclosing `InsightChartProvider` */
   height?: number;
   width?: number;
 }) => {
@@ -47,7 +46,12 @@ export const ChartCarousel = ({
 
   return (
     <div className={`${INSIGHT_CARD_PREFIX_CLS}-chart-carousel`}>
-      <G2Chart spec={charts[selectedChartIndex]} height={height} width={width} />
+      <InsightChart
+        className={`${INSIGHT_CARD_PREFIX_CLS}-chart-container`}
+        spec={charts[selectedChartIndex]}
+        height={height}
+        width={width}
+      />
       {chartsOptions.length > 1 && (
         <div style={{ textAlign: 'center' }}>
           {chartsOptions.map((option) => (

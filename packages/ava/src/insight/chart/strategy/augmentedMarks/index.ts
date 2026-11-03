@@ -4,5 +4,4 @@ export { categoryOutlierStrategy, categoryOutlierAugmentedMarksStrategy } from '
 export { changePointStrategy, changePointAugmentedMarksStrategy } from './changePoint';
 export { majorityStrategy } from './majority';
 export { correlationStrategy } from './correlation';
-export { homogeneousStrategy } from './homogeneous';
 export { timeSeriesOutlierStrategy, timeSeriesOutlierStrategyAugmentedMarksStrategy } from './timeSeriesOutlier';

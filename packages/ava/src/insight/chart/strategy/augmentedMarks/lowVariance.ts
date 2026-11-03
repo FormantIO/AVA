@@ -1,28 +1,18 @@
-import { Mark } from '@antv/g2';
-
 import { LowVarianceInfo, InsightInfo } from '../../../types';
-import { lineMarkStrategy } from '../commonMarks';
+import { ruleYMarkStrategy } from '../commonMarks';
 import { insight2ChartStrategy } from '../chart';
-import { LowVarianceMark } from '../../types';
+import { InsightChartMark, LowVarianceMark } from '../../types';
 import { augmentedMarks2Marks } from '../../utils';
 import { dataFormat } from '../../../../utils';
 
 export const lowVarianceAugmentedMarkStrategy = (insight: InsightInfo<LowVarianceInfo>): LowVarianceMark[] => {
-  const { patterns } = insight;
-  const marks: LowVarianceMark[] = [];
-  patterns.forEach((pattern) => {
-    const { mean } = pattern;
-    const meanLineMark = lineMarkStrategy({ y: mean }, { label: `mean: ${dataFormat(mean)}` });
-    marks.push({
-      meanLine: [meanLineMark],
-    });
-  });
-  return marks;
+  return insight.patterns.map(({ mean }) => ({
+    meanLine: [ruleYMarkStrategy(mean, { role: 'mean', name: 'mean', label: `mean: ${dataFormat(mean)}` })],
+  }));
 };
 
-export const lowVarianceStrategy = (insight: InsightInfo<LowVarianceInfo>): Mark[] => {
+export const lowVarianceStrategy = (insight: InsightInfo<LowVarianceInfo>): InsightChartMark[] => {
   const chartMark = insight2ChartStrategy(insight);
-  const lowVarianceMarks = lowVarianceAugmentedMarkStrategy(insight);
-  const marks = augmentedMarks2Marks(lowVarianceMarks);
+  const marks = augmentedMarks2Marks(lowVarianceAugmentedMarkStrategy(insight));
   return [chartMark, ...marks];
 };

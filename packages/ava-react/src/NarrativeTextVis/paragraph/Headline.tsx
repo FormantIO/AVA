@@ -8,8 +8,6 @@ import { presetPluginManager } from '../chore/plugin';
 
 import type { HeadlineSpec } from '@formant/ava';
 import type { ExtensionProps, ParagraphEvents, ThemeStylesProps } from '../types';
-import { AlertCircle } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle, AlertTitleRow } from '../../InsightCard/Title/customStyled';
 
 
 type HeadlineProps = Pick<ExtensionProps, 'pluginManager'> &
@@ -42,12 +40,6 @@ export function Headline({
   };
 
   return (
-    <Alert>
-          <AlertTitleRow>
-            <AlertCircle size={16} />
-            <AlertTitle>Time Series Outlier Detected</AlertTitle>
-          </AlertTitleRow>
-          <AlertDescription>
     <StyledHeadline
       onClick={onClick}
       onMouseEnter={onMouseEnter}
@@ -58,7 +50,5 @@ export function Headline({
     >
       <Phrases spec={spec.phrases} pluginManager={pluginManager} {...themeStyles} {...phraseEvents} />
     </StyledHeadline>
-    </AlertDescription>
-        </Alert>
   );
 }

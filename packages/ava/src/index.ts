@@ -127,6 +127,19 @@ export type {
   InsightExtractorProps,
   SpecificInsightProps,
   AugmentedMarks,
+  InsightChartSpec,
+  InsightChartMark,
+  InsightChartAxis,
+  InsightChartPoint,
+  InsightChartValue,
+  InsightMarkRole,
+  InsightLineMark,
+  InsightBarMark,
+  InsightPointMark,
+  InsightAreaMark,
+  InsightRuleXMark,
+  InsightRuleYMark,
+  InsightArcMark,
 } from './insight';
 
 /* NTV (Narrative Text Vis) */

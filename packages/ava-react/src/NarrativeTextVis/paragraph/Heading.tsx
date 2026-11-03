@@ -11,8 +11,6 @@ import { presetPluginManager } from '../chore/plugin';
 
 import type { HeadingParagraphSpec } from '@formant/ava';
 import type { ExtensionProps, PhraseEvents, ThemeStylesProps } from '../types';
-import { Alert, AlertDescription, AlertTitle, AlertTitleRow } from '../../InsightCard/Title/customStyled';
-import { AlertCircle } from 'lucide-react';
 
 type HeadingProps = ExtensionProps &
   ThemeStylesProps &

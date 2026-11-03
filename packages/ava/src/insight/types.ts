@@ -1,9 +1,8 @@
 import { PCorrTestParameter } from '../data/statistics/types';
 
 import { PATTERN_TYPES, HOMOGENEOUS_PATTERN_TYPES } from './constant';
-import { AugmentedMarks } from './chart/types';
+import { AugmentedMarks, InsightChartSpec } from './chart/types';
 
-import type { G2Spec } from '@antv/g2';
 import type { ParagraphSpec } from '../ntv/types';
 import type { NumberFieldInfo, DateFieldInfo, StringFieldInfo, Extra } from '../data/types';
 
@@ -80,7 +79,8 @@ export type PatternInfo =
 /** explanation and visualization for insight */
 export interface InsightVisualizationSpec {
   patternType: InsightType;
-  chartSpec: G2Spec;
+  /** absent for homogeneous insights, which have no chart */
+  chartSpec?: InsightChartSpec;
   /** augmented marks */
   annotationSpec?: AugmentedMarks;
   /**

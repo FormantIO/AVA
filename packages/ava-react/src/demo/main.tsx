@@ -6,6 +6,21 @@ import 'antd/dist/antd.css';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, GlobalStyles, lightTheme } from './theme-provider';
 import ResizableSquareComponent from './ResizableSquare';
+import { InsightGallery } from './gallery';
+import type { InsightChartConfig } from '../InsightChart';
+import type { InsightCardThemeInput } from '../InsightCard';
+
+/** example of the chart config surface: theme tokens plus a raw ECharts override, shown on the first card */
+const CUSTOM_CHART_CONFIG: InsightChartConfig = { theme: { mark: { lineWidth: 3 } }, echarts: { animation: false } };
+/** example of the card theme tokens (title, badge, summary, bullets, values), shown on the first card */
+const CUSTOM_CARD_THEME: InsightCardThemeInput = {
+  font: 'Inter, system-ui, sans-serif',
+  title: { fontSize: '1rem' },
+  badge: { background: '#795bce' },
+  summary: { background: 'transparent', border: '#20a0ff', iconColor: '#f9c36e', textFontSize: '13px', textLineHeight: '18px' },
+  bullets: { fontSize: '12px', lineHeight: '18px' },
+  entity: { color: '#20a0ff', fontWeight: '600' },
+};
 // New function to generate sample data
 const generateSampleData = (days: number = 7, baseValue: number = 100, trend: number = 5, noise: number = 2) => {
   const data = [];
@@ -1342,6 +1357,9 @@ const App = () => {
 
     <div style={{ padding: '20px' }}>
       <h1>AVA React Demo</h1>
+      <h2>Every insight type</h2>
+      <InsightGallery />
+      <h2>Formant sample data</h2>
       <div style={{ width: '600px', margin: '20px auto' }}>
 
       <button onClick={toggleTheme}>
@@ -1365,6 +1383,8 @@ const App = () => {
         insightInfo={insight}
         className="w-full h-full" 
         footerTools={[]}
+        chart={index === 0 ? CUSTOM_CHART_CONFIG : undefined}
+        theme={index === 0 ? CUSTOM_CARD_THEME : undefined}
       />
         </ResizableSquareComponent>
      
