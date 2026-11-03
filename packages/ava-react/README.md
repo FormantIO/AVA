@@ -55,6 +55,38 @@ The following is a practical example of how the three main components of [@antv/
     }
     ```
 
+    Charts render with [ECharts](https://echarts.apache.org/) 5. Style them with `chart` (per card) or `<InsightChartProvider>` (app-wide; nested configs merge):
+
+    ```tsx
+    import { InsightCard, InsightChartProvider } from '@formant/ava-react';
+
+    <InsightChartProvider
+      theme={{ mode: 'dark', palette: ['#5b8def', '#3ddbd9'], roles: { outlier: '#ff4d6d' }, mark: { lineWidth: 1.5 } }}
+      echarts={{ animation: false }} // raw ECharts option, deep-merged last; or (option, { spec, theme }) => option
+    >
+      <InsightCard insightInfo={insightInfo} chart={{ height: 320 }} />
+    </InsightChartProvider>
+    ```
+
+    Theme precedence: built-in `light`/`dark` < Formant CSS variables on the page (`--color-text-primary`, … see `FORMANT_CSS_VARIABLES`; disable with `cssVariables: false`) < your `theme`. `echartsTheme` passes a registered ECharts theme to `echarts.init`. `toEChartsOption(spec, resolveInsightChartTheme(theme))` gives the plain option without React.
+
+    Date-like x values (`2025-03-19`, `2025-03-19 00:00:00`, ISO) render on an ECharts time axis with compact labels. Control it with `time: { axis: 'auto' | true | false, parse: (value) => epochMs | undefined }`; restyle labels through the override, e.g. `echarts: { xAxis: { axisLabel: { formatter: '{MMM} {d}' } } }`.
+
+    The rest of the card (surface, title, badge, subtitle, summary box, detail bullets, inline values, info tooltip, font) is styled with `theme` tokens. They compile to `--ava-*` CSS variables (`summary.titleColor` → `--ava-summary-title-color`), so they also work from plain CSS; unset tokens keep the default look, and `font` is picked up by the chart too:
+
+    ```tsx
+    import { InsightCard, InsightCardThemeProvider } from '@formant/ava-react';
+
+    <InsightCardThemeProvider theme={{ font: 'Inter, sans-serif', badge: { background: '#795bce' } }}>
+      <InsightCard
+        insightInfo={insightInfo}
+        theme={{ summary: { border: '#20a0ff', iconColor: '#f9c36e' }, entity: { color: '#20a0ff', fontWeight: '600' } }}
+      />
+    </InsightCardThemeProvider>
+    ```
+
+    See `InsightCardTheme` for every token.
+
 3. `<AutoChart/>` is being further upgraded, so stay tuned.
 
 ```ts

@@ -8,9 +8,6 @@ import { presetPluginManager } from '../chore/plugin';
 
 import type { TextParagraphSpec } from '@formant/ava';
 import type { ThemeStylesProps, ExtensionProps, PhraseEvents } from '../types';
-import { AlertDescription, AlertTitle } from '../../InsightCard/Title/customStyled';
-import { Alert, AlertTitleRow } from '../../InsightCard/Title/customStyled';
-import { AlertCircle } from 'lucide-react';
 
 type TextLineProps = ThemeStylesProps &
   Pick<ExtensionProps, 'pluginManager'> &
@@ -27,23 +24,7 @@ export function TextLine({
   ...events
 }: TextLineProps) {
   const themeStyles = { size, theme, palette };
-  let baseText = "Anamoly was detected";
-  if (JSON.stringify(spec).includes("outliers")) {
-    baseText = "Time Series Outlier Detected";
-  } else if (JSON.stringify(spec).includes("trend")) {
-    baseText = "Trend Anamoly Detected";
-  } else if (JSON.stringify(spec).includes("correlated")) {
-    baseText = "Correlation Detected";
-  } else if (JSON.stringify(spec).includes("significantly higher than the other dimensions")) {
-    baseText = "Majority Anamoly Detected";
-  }
   return (
-    <Alert>
-         <AlertTitleRow>
-         <AlertCircle size={16} color="#ef4444" />
-         <AlertTitle>{baseText}</AlertTitle>
-         </AlertTitleRow>
-            <AlertDescription>
     <StyledP
       {...themeStyles}
       indents={spec.indents}
@@ -51,10 +32,6 @@ export function TextLine({
       style={spec.styles}
     >
       <Phrases spec={spec.phrases} pluginManager={pluginManager} {...themeStyles} {...events} />
-      </StyledP>
-      </AlertDescription>
-     
-      </Alert>
-     
-    )
+    </StyledP>
+  );
 }

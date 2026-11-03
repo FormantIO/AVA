@@ -1,6 +1,7 @@
 import { InsightType } from '@formant/ava';
 
 import { getPrefixCls } from '../utils';
+import { DEFAULT_INSIGHT_CHART_HEIGHT } from '../InsightChart';
 /** class name prefix for InsightCard, avar-insight-card */
 export const INSIGHT_CARD_PREFIX_CLS = getPrefixCls('insight-card');
 
@@ -24,12 +25,35 @@ export const ALGORITHM_NAME_MAP_ZH: Record<InsightType, string> = {
   correlation: '相关性',
 };
 
+/** headline of the summary box, per insight type */
+export const SUMMARY_TITLE_MAP: Record<InsightType, string> = {
+  category_outlier: 'Category Outlier Detected',
+  trend: 'Trend Detected',
+  change_point: 'Change Point Detected',
+  time_series_outlier: 'Time Series Outlier Detected',
+  majority: 'Majority Detected',
+  low_variance: 'Low Variance Detected',
+  correlation: 'Correlation Detected',
+};
+
+export const SUMMARY_TITLE_MAP_ZH: Record<InsightType, string> = {
+  category_outlier: '发现异常类别',
+  trend: '发现趋势',
+  change_point: '发现突变点',
+  time_series_outlier: '发现时序异常',
+  majority: '发现显著性',
+  low_variance: '发现均匀分布',
+  correlation: '发现相关性',
+};
+
 /** default minimum height for card */
 export const CARD_CONTENT_HEIGHT = 48;
 /** default chart height in card */
-export const CHART_HEIGHT = 280;
+export const CHART_HEIGHT = DEFAULT_INSIGHT_CHART_HEIGHT;
 /** chart carousel plugin key  */
 export const DISPLAY_CHARTS_PLUGIN_KEY = 'charts';
+/** insight summary (titled box around the leading sentence) plugin key */
+export const INSIGHT_SUMMARY_PLUGIN_KEY = 'insightSummary';
 /** subspace description plugin key */
 export const SUBSPACE_DESCRIPTION_PLUGIN_KEY = 'subspaceDescription';
 

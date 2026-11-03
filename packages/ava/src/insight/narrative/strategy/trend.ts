@@ -40,7 +40,7 @@ export default class TrendNarrativeStrategy extends InsightNarrativeStrategy<Tre
     ],
     'en-US': [
       {
-        template: 'There is a signifcant ${trend} trend for ${measure} during ${dateRange} with a slope of ${slope}X.',
+        template: 'There is a significant ${trend} trend for ${measure} during ${dateRange} with a slope of ${slope}X.',
         variableMetaMap,
       },
     ],

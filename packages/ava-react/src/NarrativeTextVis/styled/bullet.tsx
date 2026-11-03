@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { getFontSize, getThemeColor, getLineHeight } from '../theme';
+import { getFontSize, getLineHeight } from '../theme';
+import { cardToken } from '../../InsightCard/cardTheme';
 import { NTV_PREFIX_CLS } from '../constants';
 
 import type { ThemeStylesProps } from '../types';
@@ -9,16 +10,16 @@ const BULLET_PADDING_LEFT = 24;
 
 export const Bullet = styled.div<ThemeStylesProps>`
   padding-left: ${`${BULLET_PADDING_LEFT}px`};
-  font-family: PingFangSC, sans-serif;
-  color: var(--color-text-secondary);
-  font-size: ${({ size }) => getFontSize(size)};
+  font-family: ${cardToken('font', 'PingFangSC, sans-serif')};
+  color: ${cardToken('bullets.color', 'var(--color-text-secondary)')};
+  font-size: ${({ size }) => cardToken('bullets.fontSize', getFontSize(size))};
   margin-bottom: 8px;
-  line-height: ${({ size }) => getLineHeight(size)};
+  line-height: ${({ size }) => cardToken('bullets.lineHeight', getLineHeight(size))};
 `;
 
 export const Ol = styled(Bullet)`
   list-style-type: decimal;
-  max-height: 100px;
+  max-height: ${cardToken('bullets.maxHeight', '100px')};
   overflow: auto;
   &::-webkit-scrollbar {
     background: transparent;
@@ -27,14 +28,14 @@ export const Ol = styled(Bullet)`
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #bac4e2;
+    background: ${cardToken('bullets.scrollbarColor', '#bac4e2')};
     border-radius: 0.25rem;
     -webkit-border-radius: 0.25rem;
     -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
   }
 
   &::-webkit-scrollbar-corner {
-    background: #bac4e2;
+    background: ${cardToken('bullets.scrollbarColor', '#bac4e2')};
   }
 `;
 
@@ -51,9 +52,9 @@ export const Li = styled.li<
   }
 >`
   list-style: inherit;
-  color: var(--color-text-secondary);
-  font-size: ${({ size }) => getFontSize(size)};
-  line-height: ${({ size }) => getLineHeight(size)};
+  color: ${cardToken('bullets.color', 'var(--color-text-secondary)')};
+  font-size: ${({ size }) => cardToken('bullets.fontSize', getFontSize(size))};
+  line-height: ${({ size }) => cardToken('bullets.lineHeight', getLineHeight(size))};
   position: relative;
   transform: ${({ collapsible, size }) =>
     collapsible ? `translateX(${size === 'small' ? '12px' : '16px'})` : undefined};

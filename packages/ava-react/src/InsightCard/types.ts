@@ -2,6 +2,8 @@ import type { NtvPluginType } from '../NarrativeTextVis';
 import type { CSSProperties, ReactNode } from 'react';
 import type { Tool } from './Toolbar/types';
 import type { InsightInfo, InsightOptions, NarrativeTextSpec, InsightVisualizationOptions } from '@formant/ava';
+import type { InsightChartConfig } from '../InsightChart';
+import type { InsightCardThemeInput } from './cardTheme';
 
 export type CardType = 'mini' | 'standard' | 'expand' | 'detail';
 
@@ -55,6 +57,18 @@ export type InsightCardProps = CommonProps &
       | ((insightInfo?: InsightCardInfo, defaultSpec?: NarrativeTextSpec) => NarrativeTextSpec);
     /** custom plugins, should pass if your customized schema includes special plugins ntv schema 中，自己定制的 plugins */
     extraPlugins?: NtvPluginType[];
+    /**
+     * chart styling for this card: theme tokens (`'light'`, `'dark'` or a partial theme), a raw ECharts
+     * option deep-merged last, an ECharts theme, renderer and height. Merges over any enclosing
+     * `InsightChartProvider`, so app-wide defaults can be set once there.
+     */
+    chart?: InsightChartConfig;
+    /**
+     * Design tokens for the card itself: surface, title, badge, summary box, detail bullets, inline
+     * values, info tooltip and font. Compiled to `--ava-*` CSS variables on the card, so they can also
+     * be set from CSS or app-wide with `InsightCardThemeProvider`. Unset tokens keep the default look.
+     */
+    theme?: InsightCardThemeInput;
   };
 
 export type InsightDataStatus = 'RUNNING' | 'SUCCESS' | 'ERROR';

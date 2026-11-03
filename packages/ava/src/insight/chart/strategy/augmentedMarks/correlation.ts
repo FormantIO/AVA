@@ -1,10 +1,8 @@
-import { Mark } from '@antv/g2';
-
 import { CorrelationInfo, InsightInfo } from '../../../types';
 import { insight2ChartStrategy } from '../chart';
+import { InsightChartMark } from '../../types';
 
-export const correlationStrategy = (insight: InsightInfo<CorrelationInfo>): Mark[] => {
+export const correlationStrategy = (insight: InsightInfo<CorrelationInfo>): InsightChartMark[] => {
   // todo add correlation regression line and value
-  const chartMark = insight2ChartStrategy(insight);
-  return [chartMark];
+  return [insight2ChartStrategy(insight)];
 };

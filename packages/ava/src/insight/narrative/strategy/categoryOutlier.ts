@@ -46,7 +46,7 @@ export default class CategoryOutlierNarrativeStrategy extends InsightNarrativeSt
         template: '${.x}',
         separator: getDefaultSeparator('zh-CN'),
         variableMetaMap,
-        useVariable: 'paragraph',
+        useVariable: 'patterns',
       },
     ],
     'en-US': [
@@ -54,9 +54,8 @@ export default class CategoryOutlierNarrativeStrategy extends InsightNarrativeSt
         templateId: 'outliers',
         template: '${.x}',
         separator: getDefaultSeparator('en-US'),
-       
         variableMetaMap,
-        useVariable: 'paragraph',
+        useVariable: 'patterns',
       },
     ],
   };

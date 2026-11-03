@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { getFontSize, getThemeColor } from '../theme';
+import { getFontSize } from '../theme';
+import { cardToken } from '../../InsightCard/cardTheme';
 
 import type { ThemeStylesProps } from '../types';
 
@@ -8,11 +9,10 @@ export const Entity = styled.span<ThemeStylesProps>`
   align-items: center;
   box-sizing: border-box;
   font-size: ${({ size }) => getFontSize(size)};
-  font-family: Roboto-Medium, PingFangSC, sans-serif;
+  font-family: ${cardToken('font', 'Roboto-Medium, PingFangSC, sans-serif')};
+  font-weight: ${cardToken('entity.fontWeight', 'inherit')};
   border-radius: 2px;
-  // 这里 type 没有区分 colorBase 还是 colorEntityBase 都是 ‘text’，因为 colorToken 虽然不同但是目前默认色板一样，所以就先这样。
-  // TODO @yuxi 待之后对标题等额外处理的时候可以一起考虑
-  color: var(--color-text-primary);
+  color: ${cardToken('entity.color', 'var(--color-text-primary)')};
   margin: 0 1px;
   overflow-wrap: break-word;
 `;

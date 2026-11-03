@@ -1,9 +1,39 @@
-import { Subspace, generateInsightVisualizationSpec } from '@formant/ava';
+import { Subspace, generateInsightVisualizationSpec, isTextParagraph } from '@formant/ava';
 
-import { DISPLAY_CHARTS_PLUGIN_KEY, SUBSPACE_DESCRIPTION_PLUGIN_KEY } from '../constants';
+import {
+  DISPLAY_CHARTS_PLUGIN_KEY,
+  INSIGHT_SUMMARY_PLUGIN_KEY,
+  SUBSPACE_DESCRIPTION_PLUGIN_KEY,
+  SUMMARY_TITLE_MAP,
+  SUMMARY_TITLE_MAP_ZH,
+} from '../constants';
 
-import type { G2Spec } from '@antv/g2';
-import type { NarrativeTextSpec, ParagraphSpec, InsightInfo, InsightVisualizationOptions } from '@formant/ava';
+import type {
+  InsightChartSpec,
+  InsightType,
+  NarrativeTextSpec,
+  ParagraphSpec,
+  InsightInfo,
+  InsightVisualizationOptions,
+} from '@formant/ava';
+import type { InsightSummarySchema } from '../ntvPlugins/types';
+
+/** box the first sentence of an insight's narrative under a headline naming the insight type */
+const withSummary = (
+  paragraphs: ParagraphSpec[] = [],
+  insightType: InsightType,
+  lang: InsightVisualizationOptions['lang']
+): ParagraphSpec[] => {
+  const index = paragraphs.findIndex(isTextParagraph);
+  if (index < 0) return paragraphs;
+  const summary: InsightSummarySchema = {
+    type: 'custom',
+    customType: INSIGHT_SUMMARY_PLUGIN_KEY,
+    title: (lang === 'zh-CN' ? SUMMARY_TITLE_MAP_ZH : SUMMARY_TITLE_MAP)[insightType],
+    paragraph: paragraphs[index] as InsightSummarySchema['paragraph'],
+  };
+  return [...paragraphs.slice(0, index), summary as ParagraphSpec, ...paragraphs.slice(index + 1)];
+};
 
 /**
  * generate description of data subspace (the conditions of data subset)
@@ -38,7 +68,7 @@ export const generateContentVisSpec = (
 
   if (visualizationSpecs) {
     const narrativeParagraphs: ParagraphSpec[] = [];
-    const chartSpecs: G2Spec[] = [];
+    const chartSpecs: InsightChartSpec[] = [];
 
     if (insightInfo.subspace?.length) {
       // const subspaceDescriptionSpec = getSubspaceDescriptionSpec(insightInfo.subspace);
@@ -46,9 +76,10 @@ export const generateContentVisSpec = (
     }
 
     visualizationSpecs.forEach((visualizationSpec) => {
-      const { narrativeSpec, chartSpec } = visualizationSpec;
-      narrativeParagraphs.push(...narrativeSpec);
-      chartSpecs.push(chartSpec);
+      const { narrativeSpec, chartSpec, patternType } = visualizationSpec;
+      narrativeParagraphs.push(...withSummary(narrativeSpec, patternType, visualizationOptions?.lang));
+      // homogeneous insights have no chart
+      if (chartSpec) chartSpecs.push(chartSpec);
     });
 
     const insightContentSpec: NarrativeTextSpec = {
