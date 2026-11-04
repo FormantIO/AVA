@@ -1,5 +1,10 @@
 # Formant fork
 
+## @formant/ava 3.5.2-formant · @formant/ava-react 3.4.2-formant
+
+- `InsightCard` title: `title · measure` instead of `title- measure`. With no `title`, the measure names render instead of crashing on an object child. A function `title` receives the default title.
+- `formatInsightDate`: zone-qualified timestamps (e.g. hourly UTC buckets `…T05:00:00Z`) always show their time, so an hourly series reads `Oct 6, 23:00`, `Oct 7, 00:00` instead of switching to `Oct 7, 2026` at local midnight. Zone-less `00:00:00` values and plain dates still read as dates.
+
 ## @formant/ava 3.5.1-formant · @formant/ava-react 3.4.1-formant
 
 - Readable dates in insight text and chart callouts. The change-point sentence now reads "during Oct 6 - 7" instead of the raw range `2026-10-06 00:00:00~2026-10-07 23:00:00`. The callout reads "Oct 7, 04:00 · value: 60.06".

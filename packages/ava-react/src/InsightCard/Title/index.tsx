@@ -23,7 +23,8 @@ export const Title: React.FC<TitleProps> = ({ title, patterns, measures, headerT
       <HeaderContainer>
         <TitleContainer>
           <CardTitle>
-            {title ? `${title}- ${measureNames}`: {measureNames}}
+            {/* `title` may be a node or a function of the default (measure names) title */}
+            {typeof title === 'function' ? title(measureNames) : title ? <>{title} · {measureNames}</> : measureNames}
             <Badge> {analysisName}</Badge>
           </CardTitle>
           <CardDescription> 
