@@ -16,13 +16,24 @@ export const parseInsightDate = (value: unknown): Date | undefined => {
   return Number.isNaN(date.getTime()) ? undefined : date;
 };
 
-const hasTime = (date: Date) => date.getHours() !== 0 || date.getMinutes() !== 0;
+// a zone designator means an absolute instant (e.g. an hourly UTC bucket): always show its time
+const ZONED = /\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})$/;
+
+/**
+ * Whether to print a time of day. Zoned instants always do, so an hourly series reads
+ * `Oct 6, 23:00`, `Oct 7, 00:00` rather than switching to a date at local midnight. Zone-less
+ * values only do when the clock is not midnight (`2025-03-19 00:00:00` is a daily bucket).
+ */
+const showsTime = (value: unknown, date: Date) =>
+  value instanceof Date || (typeof value === 'string' && ZONED.test(value))
+    ? true
+    : date.getHours() !== 0 || date.getMinutes() !== 0;
 
 /** `Oct 7, 2026`, or `Oct 7, 14:00` when the value carries a time of day; non-dates pass through */
 export const formatInsightDate = (value: unknown): string => {
   const date = parseInsightDate(value);
   if (!date) return String(value);
-  return format(date, hasTime(date) ? 'MMM d, HH:mm' : 'MMM d, yyyy');
+  return format(date, showsTime(value, date) ? 'MMM d, HH:mm' : 'MMM d, yyyy');
 };
 
 /** `Oct 6 - 7, 2026` style range (little-date); non-dates fall back to `start ~ end` */
