@@ -2,6 +2,7 @@
 import { first, last } from 'lodash';
 
 import { generateTextSpec } from '../../../ntv';
+import { formatInsightDateRange } from '../../../utils/dateFormat';
 
 import { InsightNarrativeStrategy } from './base';
 
@@ -44,7 +45,7 @@ export default class ChangePointNarrativeStrategy extends InsightNarrativeStrate
     const spec = generateTextSpec({
       structures: ChangePointNarrativeStrategy.structures[lang],
       variable: {
-        dateRange: `${first(data)[dimension]}~${last(data)[dimension]}`,
+        dateRange: formatInsightDateRange(first(data)[dimension], last(data)[dimension]),
         measure: patterns[0].measure,
         total: patterns.length,
       },

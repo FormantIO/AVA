@@ -5,11 +5,10 @@ import { generateTextSpec } from '../../../ntv';
 
 import { InsightNarrativeStrategy } from './base';
 import { getDiffDesc } from './helpers';
+import { formatInsightDate, formatInsightDateRange } from '../../../utils/dateFormat';
 
 import type { InsightType, Language, InsightInfo, TimeSeriesOutlierInfo } from '../../types';
 import type { ParagraphSpec, Structure } from '../../../ntv/types';
-import { formatDateRange } from "little-date";
-import { format } from 'date-fns';
 
 const variableMetaMap = {
   dateRange: {
@@ -83,7 +82,7 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
     const spec = generateTextSpec({
       structures: TimeSeriesOutlierNarrativeStrategy.structures[lang],
       variable: {
-        dateRange: `${formatDateRange(new Date(first(data)[dimension]), new Date(last(data)[dimension]), {includeTime: false})}`,
+        dateRange: formatInsightDateRange(first(data)[dimension], last(data)[dimension]),
         total: patterns.length,
         measure,
         max: maxBy(data, measure)[measure],
@@ -95,7 +94,7 @@ export default class TimeSeriesOutlierNarrativeStrategy extends InsightNarrative
             ...point,
             base,
             diffDesc: getDiffDesc(diff, lang),
-            x: format(new Date(point.x), 'MMM d, yyyy'),
+            x: formatInsightDate(point.x),
             diff,
           };
         }),

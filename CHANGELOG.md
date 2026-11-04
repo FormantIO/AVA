@@ -1,5 +1,10 @@
 # Formant fork
 
+## @formant/ava 3.5.1-formant · @formant/ava-react 3.4.1-formant
+
+- Readable dates in insight text and chart callouts. The change-point sentence now reads "during Oct 6 - 7" instead of the raw range `2026-10-06 00:00:00~2026-10-07 23:00:00`. The callout reads "Oct 7, 04:00 · value: 60.06".
+- New `parseInsightDate` / `formatInsightDate` / `formatInsightDateRange` (exported from `@formant/ava` utils). The trend, time-series outlier and change-point narratives share them. `YYYY-MM-DD HH:mm:ss` values parse safely, including on older Safari. Non-date dimensions pass through unchanged.
+
 ## @formant/ava 3.5.0-formant · @formant/ava-react 3.4.0-formant
 
 Insight charts render with Apache ECharts (`^5.6.0`) instead of AntV G2, and every part of an insight card is themeable.

@@ -2,12 +2,12 @@
 import { first, last } from 'lodash';
 
 import { generateTextSpec } from '../../../ntv';
+import { formatInsightDateRange } from '../../../utils/dateFormat';
 
 import { InsightNarrativeStrategy } from './base';
 
 import type { InsightType, Language, InsightInfo, TrendInfo, TrendType } from '../../types';
 import type { ParagraphSpec, Structure } from '../../../ntv/types';
-import { formatDateRange } from "little-date";
 
 
 const trendMapping: Record<TrendType, string> = {
@@ -56,7 +56,7 @@ export default class TrendNarrativeStrategy extends InsightNarrativeStrategy<Tre
     const spec = generateTextSpec({
       structures: TrendNarrativeStrategy.structures[lang],
       variable: {
-        dateRange: `${formatDateRange(new Date(first(data)[dimension]), new Date(last(data)[dimension]), {includeTime: false})}`,
+        dateRange: formatInsightDateRange(first(data)[dimension], last(data)[dimension]),
         measure,
         trend: lang === 'en-US' ? trend : trendMapping[trend],
         slope: regression.equation[0],
