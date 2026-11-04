@@ -1,7 +1,7 @@
 import { size } from 'lodash';
 
 import { ChangePointInfo, InsightInfo } from '../../../types';
-import { dataFormat } from '../../../../utils';
+import { dataFormat, formatInsightDate } from '../../../../utils';
 import { pointMarkStrategy } from '../commonMarks';
 import { insight2ChartStrategy } from '../chart';
 import { ChangePointMark, InsightChartMark } from '../../types';
@@ -18,7 +18,7 @@ export const changePointAugmentedMarksStrategy = (insight: InsightInfo<ChangePoi
       pointMarkStrategy([pattern], {
         role: 'highlight',
         name: 'change point',
-        label: (pt) => `${pt.x}, ${measure}: ${dataFormat(pt.y)}`,
+        label: (pt) => `${formatInsightDate(pt.x)} · ${measure}: ${dataFormat(pt.y)}`,
       }),
     ],
   }));
